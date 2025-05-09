@@ -3,39 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - utad.PlayAble</title>
+    <title>playAble - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/utad.PlayAble.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <div class="logo-text">play<span>Able</span></div>
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Início</a></li>
-                    <li><a href="#">Jogos</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Comunidade</a></li>
-                    <li><a href="#">Suporte</a></li>
-                </ul>
-            </nav>
+        <div>
+            <a href="/">
+                <img src="/assets/logo.svg" alt="Logo" style="height: 35px; margin: 10px;">
+            </a>
         </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a class="nav a" href="/home/Help">AJUDA</a></li>
+            </ul>
+        </nav>
+
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - utad.PlayAble - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+    <footer>
+            <div class="footer-logo">
+                <img src="/assets/logo.svg" alt="Logo" style="height: 35px; margin: 0.5em 2.5em 0.5em 2em;">
+            </div>
+            <div class="footer-links">
+            <a href="/home/About">Sobre Nós</a>
+            <a href="/home/Help">Ajuda</a>
+            </div>
+            <img src="/assets/bixinhos.svg" alt="mascotes da playAble" style="width: 100%; max-width: 240px; margin: 0.5em 2em 1em 2em;">
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

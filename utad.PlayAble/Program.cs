@@ -1,4 +1,13 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using utad.PlayAble.Data;
+using utad.PlayAble.Models;
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("utadPlayAbleContextConnection") ?? throw new InvalidOperationException("Connection string 'utadPlayAbleContextConnection' not found.");
+
+builder.Services.AddDbContext<utadPlayAbleContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<utadPlayAbleContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
