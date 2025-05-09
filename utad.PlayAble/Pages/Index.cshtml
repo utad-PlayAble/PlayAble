@@ -1,102 +1,43 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "PlayAble - Plataforma Digital de Minijogos Didáticos Acessíveis";
+    ViewData["Title"] = "Plataforma Digital de Minijogos Didáticos Acessíveis";
 }
 
 
-<main id="main-content">
-    <section class="hero">
-        <div class="container">
-            <h1>Jogos Didáticos Acessíveis para Todos</h1>
-            <p>Na playAble, acreditamos que a educação deve ser inclusiva e divertida. Nossa plataforma oferece minijogos didáticos adaptados para todas as necessidades, promovendo aprendizagem e desenvolvimento para todos.</p>
-            <a href="#games" class="cta-button">Comece a Jogar</a>
+<main class="main-content">
+    <h1 style="text-align: center;">BEM-VINDE AO PLAYABLE!</h1>
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <p>
+                Aqui podes explorar imensos minijogos educativos, super acessíveis e divertires-te enquanto aprendes.
+                Aprende connosco!
+            </p>
         </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Recursos de Acessibilidade</h2>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">👁️</div>
-                    <h3>Suporte Visual</h3>
-                    <p>Alto contraste, tamanhos ajustáveis e compatibilidade com leitores de tela para pessoas com deficiências visuais.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👂</div>
-                    <h3>Suporte Auditivo</h3>
-                    <p>Legendas detalhadas, transcrições e feedback visual para pessoas com deficiências auditivas.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🖐️</div>
-                    <h3>Suporte Motor</h3>
-                    <p>Controles simplificados, compatibilidade com dispositivos assistivos e ajuste de tempo para pessoas com deficiências motoras.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Suporte Cognitivo</h3>
-                    <p>Instruções claras, feedback constante e níveis de dificuldade personalizáveis para pessoas com deficiências cognitivas.</p>
-                </div>
-            </div>
+        <div>
+            <img src="assets/bixinhos.svg" alt="bixinhos" style=" width: 100%; max-width: 300px;">
         </div>
-    </section>
+    </div>
 
-    <section class="games-showcase" id="games">
-        <div class="container">
-            <h2 class="section-title">Conheça Nossos Jogos</h2>
 
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-img">Jogo da Memória</div>
-                    <div class="game-content">
-                        <span class="game-category">Memória e Concentração</span>
-                        <h3>Desafio da Memória</h3>
-                        <p>Encontre os pares de cartas correspondentes, exercitando sua memória e concentração de forma divertida e adaptável.</p>
-                        <div class="game-accessibility">
-                            <div class="accessibility-icon" title="Suporte Visual">V</div>
-                            <div class="accessibility-icon" title="Suporte Auditivo">A</div>
-                            <div class="accessibility-icon" title="Suporte Motor">M</div>
-                            <div class="accessibility-icon" title="Suporte Cognitivo">C</div>
-                        </div>
-                    </div>
-                    <a href="#" class="play-button" data-game="memory">Jogar Agora</a>
-                </div>
 
-                <div class="game-card">
-                    <div class="game-img">Matemática Divertida</div>
-                    <div class="game-content">
-                        <span class="game-category">Matemática</span>
-                        <h3>Operações Matemáticas</h3>
-                        <p>Pratique adição, subtração, multiplicação e divisão em um ambiente lúdico e adaptado às suas necessidades.</p>
-                        <div class="game-accessibility">
-                            <div class="accessibility-icon" title="Suporte Visual">V</div>
-                            <div class="accessibility-icon" title="Suporte Auditivo">A</div>
-                            <div class="accessibility-icon" title="Suporte Cognitivo">C</div>
-                        </div>
-                    </div>
-                    <a href="#" class="play-button" data-game="math">Jogar Agora</a>
-                </div>
 
-                <div class="game-card">
-                    <div class="game-img">Palavras e Letras</div>
-                    <div class="game-content">
-                        <span class="game-category">Linguagem</span>
-                        <h3>Construtor de Palavras</h3>
-                        <p>Forme palavras a partir de letras disponíveis, expandindo seu vocabulário e habilidades de leitura.</p>
-                        <div class="game-accessibility">
-                            <div class="accessibility-icon" title="Suporte Visual">V</div>
-                            <div class="accessibility-icon" title="Suporte Auditivo">A</div>
-                            <div class="accessibility-icon" title="Suporte Motor">M</div>
-                        </div>
-                    </div>
-                    <a href="#" class="play-button" data-game="words">Jogar Agora</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <h2>JOGOS MATEMÁTICOS</h2>
+    <div class="game-categories">
+        <div class="game-card">TÍTULO</div>
+        <div class="game-card">TÍTULO</div>
+        <div class="game-card">TÍTULO</div>
+    </div>
+
+    <h3>Mais Jogos desta Categoría</h3>
 </main>
+
+<section class="game-instructions">
+    <h2># INSTRUÇÕES</h2>
+    <ul>
+        <li><strong>PASSO 1</strong> descrição</li>
+        <li><strong>PASSO 2</strong> descrição</li>
+        <li><strong>PASSO 3</strong> descrição</li>
+    </ul>
+</section>
