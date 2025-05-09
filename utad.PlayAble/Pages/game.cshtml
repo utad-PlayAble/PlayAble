@@ -157,22 +157,28 @@
 
 
             <div class="jogos-relacionados">
-                @foreach (var relatedGame in Model.RelatedGames)
+                @if (Model.RelatedGames != null && Model.RelatedGames.Any())
                 {
-                    <div class="jogo-card">
-                        <div class="jogo-thumbnail" style="background-image: url('@relatedGame.ImageUrl'); background-size: cover; background-position: center;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
+                    @foreach (var relatedGame in Model.RelatedGames)
+                    {
+                        <div class="jogo-card">
+                            <div class="jogo-thumbnail" style="background-image: url('@relatedGame.ImageUrl'); background-size: cover; background-position: center;">
+                                <div class="play-button">
+                                    <div class="play-icon"></div>
+                                </div>
+                            </div>
+                            <div class="jogo-titulo">
+                                <span>@relatedGame.Name</span>
                             </div>
                         </div>
-                        <div class="jogo-titulo">
-                            <span>@relatedGame.Name</span>
-                            <span class="star-icon" style="font-size: 16px;">★</span>
-                        </div>
-                    </div>
+                    }
                 }
-                <a href="#" class="mais-jogos">Mais jogos desta categoria: @Model.Game.Category</a>
+                else
+                {
+                    <p style="text-align: center; font-family: 'Raleway', sans-serif; font-size: 1.2rem; color: #666;">Sem sugestões</p>
+                }
             </div>
+
 
 
 

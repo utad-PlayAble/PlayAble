@@ -28,7 +28,6 @@ public class IndexModel : PageModel
         {
             var games = await _context.Games
                 .Where(g => g.Category == category)
-                .Take(3)
                 .ToListAsync();
 
 
