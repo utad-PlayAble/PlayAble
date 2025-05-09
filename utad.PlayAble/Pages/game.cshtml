@@ -1,0 +1,204 @@
+﻿@page
+@model utad.PlayAble.Pages.gameModel
+@{
+    ViewData["Title"] = "JOGO";
+
+}
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Seleciona os elementos relevantes
+        const playButtons = document.querySelectorAll('.play-button');
+        const expandirButton = document.querySelector('.expandir-btn');
+        const gameContainer = document.getElementById('game'); // Certifique-se de adicionar id="game" à div do jogo
+
+        // Verifica se os elementos existem
+        if (!gameContainer) {
+            console.error('Elemento com id "game" não encontrado!');
+            return;
+        }
+
+        // Estado para controlar se está em tela cheia
+        let isFullscreen = false;
+
+        // Função para alternar modo tela cheia
+        function toggleFullscreen() {
+            if (!isFullscreen) {
+                // Salva a posição original para restaurar depois
+                gameContainer.setAttribute('data-original-position', gameContainer.style.position || '');
+                gameContainer.setAttribute('data-original-zindex', gameContainer.style.zIndex || '');
+
+                // Aplica estilos para tela cheia
+                gameContainer.style.position = 'fixed';
+                gameContainer.style.top = '0';
+                gameContainer.style.left = '0';
+                gameContainer.style.width = '100%';
+                gameContainer.style.height = '100%';
+                gameContainer.style.backgroundColor = '#202020';
+                gameContainer.style.zIndex = '9999';
+                gameContainer.style.display = 'flex';
+                gameContainer.style.alignItems = 'center';
+                gameContainer.style.justifyContent = 'center';
+
+                // Atualiza o texto do botão expandir
+                if (expandirButton) {
+                    expandirButton.textContent = 'MINIMIZAR JOGO';
+                }
+
+                // Adiciona um botão de fechar na tela cheia
+                const closeButton = document.createElement('button');
+                closeButton.textContent = '✕';
+                closeButton.className = 'fullscreen-close';
+                closeButton.style.position = 'absolute';
+                closeButton.style.top = '20px';
+                closeButton.style.right = '20px';
+                closeButton.style.background = '#8ca4e8';
+                closeButton.style.color = '#fff';
+                closeButton.style.border = 'none';
+                closeButton.style.borderRadius = '50%';
+                closeButton.style.width = '40px';
+                closeButton.style.height = '40px';
+                closeButton.style.fontSize = '20px';
+                closeButton.style.cursor = 'pointer';
+                closeButton.style.fontFamily = "'Raleway', sans-serif";
+                closeButton.style.fontWeight = 'bold';
+                closeButton.style.display = 'flex';
+                closeButton.style.alignItems = 'center';
+                closeButton.style.justifyContent = 'center';
+                closeButton.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+
+                closeButton.addEventListener('click', toggleFullscreen);
+                gameContainer.appendChild(closeButton);
+
+                // Ajusta a tecla ESC para sair do modo tela cheia
+                document.addEventListener('keydown', handleEscKey);
+
+                isFullscreen = true;
+            } else {
+                // Remove o botão de fechar
+                const closeButton = document.querySelector('.fullscreen-close');
+                if (closeButton) {
+                    closeButton.remove();
+                }
+
+                // Restaura posição original
+                gameContainer.style.position = gameContainer.getAttribute('data-original-position') || '';
+                gameContainer.style.zIndex = gameContainer.getAttribute('data-original-zindex') || '';
+                gameContainer.style.top = '';
+                gameContainer.style.left = '';
+                gameContainer.style.width = '';
+                gameContainer.style.height = '';
+                gameContainer.style.backgroundColor = '';
+                gameContainer.style.display = 'none';
+
+                // Restaura o texto do botão expandir
+                if (expandirButton) {
+                    expandirButton.textContent = 'EXPANDIR JOGO';
+                }
+
+                // Remove o event listener de ESC
+                document.removeEventListener('keydown', handleEscKey);
+
+                isFullscreen = false;
+            }
+        }
+
+        // Função para lidar com a tecla ESC
+        function handleEscKey(e) {
+            if (e.key === 'Escape' && isFullscreen) {
+                toggleFullscreen();
+            }
+        }
+
+        // Adiciona evento de clique nos botões de play
+        playButtons.forEach(button => {
+            button.addEventListener('click', toggleFullscreen);
+        });
+
+        // Adiciona evento de clique no botão expandir
+        if (expandirButton) {
+            expandirButton.addEventListener('click', toggleFullscreen);
+        }
+    });
+</script>
+
+
+<body>
+    <div class="container">
+        <div>
+            <h1 class="titulo" style="text-align: center;">JOGO1</h1>
+            <div style="text-align: right;">
+                <a href="#" class="mais-jogos">Mais Jogos desta Categoria</a>
+            </div>
+        </div>
+
+        <main>
+            <div class="recazul jogo-principal">
+                <div class="jogo-container">
+                    <div class="play-button">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div id="game">
+                        <partial name="e/_tetris" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-section">
+                <h2 class="titulo">TÍTULO</h2>
+                <a href="#" class="mais-jogos">Mais Jogos desta Categoria</a>
+            </div>
+
+            <div class="jogos-relacionados">
+                <!-- Jogo Relacionado 1 -->
+                <div class="jogo-card">
+                    <div class="jogo-thumbnail">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="jogo-titulo">
+                        <span>TÍTULO</span>
+                        <span class="star-icon" style="font-size: 16px;">★</span>
+                    </div>
+                </div>
+
+                <!-- Jogo Relacionado 2 -->
+                <div class="jogo-card">
+                    <div class="jogo-thumbnail">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="jogo-titulo">
+                        <span>TÍTULO</span>
+                        <span class="star-icon" style="font-size: 16px;">★</span>
+                    </div>
+                </div>
+
+                <!-- Jogo Relacionado 3 -->
+                <div class="jogo-card">
+                    <div class="jogo-thumbnail">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="jogo-titulo">
+                        <span>TÍTULO</span>
+                        <span class="star-icon" style="font-size: 16px;">★</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="game-instructions">
+                <h2># INSTRUÇÕES</h2>
+                <ul>
+                    <li><strong>PASSO 1</strong> descrição</li>
+                    <li><strong>PASSO 2</strong> descrição</li>
+                    <li><strong>PASSO 3</strong> descrição</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

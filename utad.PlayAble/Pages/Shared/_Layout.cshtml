@@ -12,7 +12,9 @@
 <body>
     <header>
         <div>
-            <img src="assets/logo.svg" alt="Logo" style="height: 35px; margin: 10px;">
+            <a href="/">
+                <img src="/assets/logo.svg" alt="Logo" style="height: 35px; margin: 10px;">
+            </a>
         </div>
         <nav class="nav-menu">
             <ul>
@@ -21,7 +23,9 @@
             </ul>
         </nav>
         <input type="text" class="search-bar" placeholder="Pesquisar jogos...">
-        <div class="user-profile">Utilizador</div>
+        <div class="user-profile">
+            <partial name="_LoginPartial" />
+        </div>
     </header>
 
     <div class="container">
@@ -32,7 +36,7 @@
 
     <footer>
             <div class="footer-logo">
-                <img src="assets/logo.svg" alt="Logo" style="height: 35px; margin: 0.5em 2.5em 0.5em 2em;">
+                <img src="/assets/logo.svg" alt="Logo" style="height: 35px; margin: 0.5em 2.5em 0.5em 2em;">
             </div>
             <div class="footer-links">
                 <a href="#">Sobre Nós</a>
@@ -44,7 +48,7 @@
                 <a href="#">Acessibilidade</a>
                 <a href="#">Idioma</a>
             </div>
-            <img src="assets/bixinhos.svg" alt="mascotes da playAble" style="width: 100%; max-width: 240px; margin: 0.5em 2em 1em 2em;">
+            <img src="/assets/bixinhos.svg" alt="mascotes da playAble" style="width: 100%; max-width: 240px; margin: 0.5em 2em 1em 2em;">
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
