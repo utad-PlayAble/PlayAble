@@ -1,4 +1,4 @@
-html {
+ï»¿html {
   font-size: 14px;
 }
 
@@ -75,6 +75,16 @@ header {
     z-index: 100;
 }
 
+.titulo {
+    font-size: 2rem;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
@@ -93,7 +103,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--dark-color);
+    color: #000000;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
@@ -111,7 +121,7 @@ nav a {
 }
 
     nav a:hover {
-        color: var(--primary-color);
+        color: black;
         background-color: rgba(74, 111, 165, 0.1);
     }
 
@@ -130,24 +140,24 @@ nav a {
         object-fit: cover;
     }
 
-/* Conteúdo Principal */
+/* ConteÃºdo Principal */
 .main-content {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 2rem;
 }
 
-.welcome-section {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: #89a3e8;
+.recazul {
+    width: 100%;
+    height: 300px;
+    background-color: #8ca4e8; /* Cor azul similar Ã  da imagem */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 12px 12px 0px #515b85; /* Sombra com deslocamento */
     display: flex;
-    position: relative;
-    border: 1rem solid #515b85;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin: 2rem;
+    gap: 20px;
 }
+
 
     .welcome-section h1 {
         font-size: 2.5rem;
@@ -163,12 +173,18 @@ nav a {
         font-weight: 800;
     }
 
-.welcome-text {
-    margin: 30px 500px 30px 1px;
+.coluna {
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
 }
 
 /* Barra de Pesquisa */
@@ -258,7 +274,7 @@ nav a {
         background-color: #3a5a8f;
     }
 
-/* Seção de Instruções */
+/* SeÃ§Ã£o de InstruÃ§Ãµes */
 .game-instructions {
     max-width: 800px;
     margin: 3rem auto;
@@ -373,4 +389,40 @@ footer {
     .game-categories {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+}
+
+.nav-menu{
+    color: black
+}
+
+/* Estilo checkbox estrela */
+
+/* Hide the default checkbox */
+.star-checkbox {
+    display: none;
+}
+
+    /* Create the star using the label */
+    .star-checkbox + label {
+        font-size: 30px;
+        cursor: pointer;
+        color: #ccc;
+    }
+
+        /* Use pseudo-element for the star icon */
+        .star-checkbox + label:before {
+            content: "â˜…";
+        }
+
+    /* When checked, change the color */
+    .star-checkbox:checked + label {
+        color: gold;
+    }
+
+.texto-normal {
+    font-size: 1rem;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
 }
