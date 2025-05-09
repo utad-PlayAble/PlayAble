@@ -15,7 +15,9 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -314,12 +316,12 @@ footer {
     bottom: 0;
     background-color: #89a3e8;
     color: black;
-    margin-top: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
     position: relative;
+    margin-top: auto;
 }
 
 
