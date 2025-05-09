@@ -19,13 +19,11 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        // Busca todas as categorias distintas
         var categories = await _context.Games
             .Select(g => g.Category)
             .Distinct()
             .ToListAsync();
 
-        // Para cada categoria, busca os 3 primeiros jogos
         foreach (var category in categories)
         {
             var games = await _context.Games
@@ -33,7 +31,65 @@ public class IndexModel : PageModel
                 .Take(3)
                 .ToListAsync();
 
+
+
+
             GamesByCategory[category] = games;
         }
+    }
+
+    public async Task<IActionResult> OnGetIsFavoriteAsync(int gameId)
+    {
+        var userId = User.Identity?.Name; // Assumindo que o nome do usuário é o ID
+        if (userId == null)
+        {
+            return Unauthorized();
+        }
+
+        var isFavorite = await _context.UserFavoriteGames
+            .AnyAsync(f => f.UserId == userId && f.GameId == gameId);
+
+        return new JsonResult(new { isFavorite });
+    }
+
+    public async Task<IActionResult> OnPostToggleFavoriteAsync(int gameId)
+    {
+        var userId = User.Identity?.Name; // Assumindo que o nome do usuário é o ID
+        if (userId == null)
+        {
+            return Unauthorized();
+        }
+
+        var favorite = await _context.UserFavoriteGames
+            .FirstOrDefaultAsync(f => f.UserId == userId && f.GameId == gameId);
+
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        if (user == null)
+        {
+            return NotFound("Usuário não encontrado.");
+        }
+
+
+        if (favorite == null)
+        {
+            // Criar nova relação
+            favorite = new UserFavoriteGame
+            {
+                User = user,
+                UserId = userId,
+                GameId = gameId,
+                Game = await _context.Games.FindAsync(gameId),
+                FavoritedAt = DateTime.Now
+            };
+            _context.UserFavoriteGames.Add(favorite);
+        }
+        else
+        {
+            // Remover relação existente
+            _context.UserFavoriteGames.Remove(favorite);
+        }
+
+        await _context.SaveChangesAsync();
+        return new JsonResult(new { success = true });
     }
 }

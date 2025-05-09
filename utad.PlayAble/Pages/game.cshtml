@@ -144,7 +144,7 @@
             <section class="game-instructions">
                 <h2>INSTRUÇÕES</h2>
                 <ul>
-                    @foreach (var instruction in Model.Game.Instructions.Split(';'))
+                    @foreach (var instruction in Model.Game.Instructions.Split('|'))
                     {
                         <li>@instruction</li>
                     }

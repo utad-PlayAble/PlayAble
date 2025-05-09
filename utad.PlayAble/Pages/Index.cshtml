@@ -22,7 +22,7 @@
     {
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <h2 class="titulo">@category</h2>
-            <a href="/games?category=@category" class="link">Mais Jogos desta Categoria</a>
+            <a href="/s?category=@category" class="link">Mais Jogos desta Categoria</a>
         </div>
 
         <div class="game-categories">
@@ -34,8 +34,6 @@
                             <img src="@game.ImageUrl" style="width: 16rem" />
                             <div style="display: flex; align-items: center; justify-content: space-between;">
                                 <p class="texto-normal">@game.Name</p>
-                                <input type="checkbox" id="star-@game.Id" class="star-checkbox">
-                                <label for="star-@game.Id"></label>
                             </div>
                         </div>
                     </a>
@@ -45,4 +43,25 @@
         </div>
     }
     </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const favoriteCheckboxes = document.querySelectorAll('.star-checkbox');
+
+        favoriteCheckboxes.forEach(async (checkbox) => {
+            const gameId = checkbox.getAttribute('data-game-id');
+
+            try {
+                const response = await fetch(`/Index?handler=IsFavorite&gameId=${gameId}`);
+                const result = await response.json();
+
+                if (result.isFavorite) {
+                    checkbox.checked = true;
+                }
+            } catch (error) {
+                console.error('Erro ao verificar favorito:', error);
+            }
+        });
+    });
+</script>
 
