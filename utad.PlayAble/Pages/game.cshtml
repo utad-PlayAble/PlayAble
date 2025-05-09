@@ -1,7 +1,7 @@
-﻿@page
+﻿@page "{id:int}"
 @model utad.PlayAble.Pages.gameModel
 @{
-    ViewData["Title"] = "JOGO";
+    ViewData["Title"] = Model.Game.Name;
 
 }
 
@@ -125,80 +125,57 @@
 
 <body>
     <div class="container">
-        <div>
-            <h1 class="titulo" style="text-align: center;">JOGO1</h1>
-            <div style="text-align: right;">
-                <a href="#" class="mais-jogos">Mais Jogos desta Categoria</a>
-            </div>
-        </div>
-
         <main>
+            <div>
+                <h1 class="titulo" style="text-align: center;">@Model.Game.Name</h1>
+            </div>
+
             <div class="recazul jogo-principal">
-                <div class="jogo-container">
+                <div class="jogo-container" style="background-image: url('@Model.Game.ImageUrl');">
                     <div class="play-button">
                         <div class="play-icon"></div>
                     </div>
                     <div id="game">
-                        <partial name="e/_tetris" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="header-section">
-                <h2 class="titulo">TÍTULO</h2>
-                <a href="#" class="mais-jogos">Mais Jogos desta Categoria</a>
-            </div>
-
-            <div class="jogos-relacionados">
-                <!-- Jogo Relacionado 1 -->
-                <div class="jogo-card">
-                    <div class="jogo-thumbnail">
-                        <div class="play-button">
-                            <div class="play-icon"></div>
-                        </div>
-                    </div>
-                    <div class="jogo-titulo">
-                        <span>TÍTULO</span>
-                        <span class="star-icon" style="font-size: 16px;">★</span>
-                    </div>
-                </div>
-
-                <!-- Jogo Relacionado 2 -->
-                <div class="jogo-card">
-                    <div class="jogo-thumbnail">
-                        <div class="play-button">
-                            <div class="play-icon"></div>
-                        </div>
-                    </div>
-                    <div class="jogo-titulo">
-                        <span>TÍTULO</span>
-                        <span class="star-icon" style="font-size: 16px;">★</span>
-                    </div>
-                </div>
-
-                <!-- Jogo Relacionado 3 -->
-                <div class="jogo-card">
-                    <div class="jogo-thumbnail">
-                        <div class="play-button">
-                            <div class="play-icon"></div>
-                        </div>
-                    </div>
-                    <div class="jogo-titulo">
-                        <span>TÍTULO</span>
-                        <span class="star-icon" style="font-size: 16px;">★</span>
+                        <partial name="@Model.Game.PartialViewName" />
                     </div>
                 </div>
             </div>
 
             <section class="game-instructions">
-                <h2># INSTRUÇÕES</h2>
+                <h2>INSTRUÇÕES</h2>
                 <ul>
-                    <li><strong>PASSO 1</strong> descrição</li>
-                    <li><strong>PASSO 2</strong> descrição</li>
-                    <li><strong>PASSO 3</strong> descrição</li>
+                    @foreach (var instruction in Model.Game.Instructions.Split(';'))
+                    {
+                        <li>@instruction</li>
+                    }
                 </ul>
             </section>
+
+            <div class="header-section">
+                <h2 class="titulo">Jogos relacionados</h2>
+            </div>
+
+
+            <div class="jogos-relacionados">
+                @foreach (var relatedGame in Model.RelatedGames)
+                {
+                    <div class="jogo-card">
+                        <div class="jogo-thumbnail" style="background-image: url('@relatedGame.ImageUrl'); background-size: cover; background-position: center;">
+                            <div class="play-button">
+                                <div class="play-icon"></div>
+                            </div>
+                        </div>
+                        <div class="jogo-titulo">
+                            <span>@relatedGame.Name</span>
+                            <span class="star-icon" style="font-size: 16px;">★</span>
+                        </div>
+                    </div>
+                }
+                <a href="#" class="mais-jogos">Mais jogos desta categoria: @Model.Game.Category</a>
+            </div>
+
+
+
         </main>
     </div>
 </body>
-</html>

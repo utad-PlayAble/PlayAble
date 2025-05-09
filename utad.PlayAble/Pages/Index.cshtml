@@ -18,38 +18,31 @@
         </div>
     </div>
 
-
-
-
-    <div style="display: flex">
-        <h2 class="titulo">JOGOS MATEMÁTICOS</h2>
-        <a href="#" class="link" style=" text-align: right">Mais Jogos desta Categoria</a>
-    </div>
-
-
-
-    <div class="game-categories">
-        <div class="recazul">
-            <div class="divrec">
-                <img src="/assets/gato.jpg" style="width: 16rem"/>
-                <div style="display: flex">
-                    <br />
-                    <p class="texto-normal">Nome do Jogo</p>
-                    <input type="checkbox" id="star" class="star-checkbox">
-                    <label for="star"></label>
-                </div>
-            </div>
+    @foreach (var category in Model.GamesByCategory.Keys)
+    {
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="titulo">@category</h2>
+            <a href="/games?category=@category" class="link">Mais Jogos desta Categoria</a>
         </div>
-    </div>
 
-    <h3>Mais Jogos desta Categoría</h3>
-</main>
+        <div class="game-categories">
+            @foreach (var game in Model.GamesByCategory[category])
+            {
+                <div class="recazul">
+                    <a href="/game/@game.Id">                 
+                        <div class="divrec">
+                            <img src="@game.ImageUrl" style="width: 16rem" />
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <p class="texto-normal">@game.Name</p>
+                                <input type="checkbox" id="star-@game.Id" class="star-checkbox">
+                                <label for="star-@game.Id"></label>
+                            </div>
+                        </div>
+                    </a>
 
-<section class="game-instructions">
-    <h2># INSTRUÇÕES</h2>
-    <ul>
-        <li><strong>PASSO 1</strong> descrição</li>
-        <li><strong>PASSO 2</strong> descrição</li>
-        <li><strong>PASSO 3</strong> descrição</li>
-    </ul>
-</section>
+                </div>
+            }
+        </div>
+    }
+    </main>
+
