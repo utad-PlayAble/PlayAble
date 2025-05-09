@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using utad.PlayAble.Data;
 
@@ -11,9 +12,11 @@ using utad.PlayAble.Data;
 namespace utad.PlayAble.Migrations
 {
     [DbContext(typeof(utadPlayAbleContext))]
-    partial class utadPlayAbleContextModelSnapshot : ModelSnapshot
+    [Migration("20250509222257_game2")]
+    partial class game2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -283,13 +286,25 @@ namespace utad.PlayAble.Migrations
                         {
                             Id = 1,
                             Category = "Puzzle",
-                            DateAdded = new DateTime(2025, 5, 9, 23, 26, 58, 112, DateTimeKind.Local).AddTicks(8173),
+                            DateAdded = new DateTime(2025, 5, 9, 23, 22, 57, 427, DateTimeKind.Local).AddTicks(7944),
                             Description = "O clássico jogo de quebra-cabeças onde você deve encaixar peças que caem para formar linhas completas.",
                             FavoriteCount = 0,
                             ImageUrl = "/assets/g/tetris.png",
                             Instructions = "Use as setas do teclado para mover as peças. Use a tecla espaço para acelerar a queda, e a tecla para cima para rodar a peça.",
                             Name = "Tetris",
                             PartialViewName = "e/_tetris"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Category = "Puzzle",
+                            DateAdded = new DateTime(2025, 5, 9, 23, 22, 57, 427, DateTimeKind.Local).AddTicks(7968),
+                            Description = "Ajude o bebé a chegar ao leite, navegando um labirinto.",
+                            FavoriteCount = 0,
+                            ImageUrl = "/assets/g/baby.png",
+                            Instructions = "Use as setas do teclado para mover o bebé.|Use espaço para interagir com items no mapa.",
+                            Name = "Baby Wants Milk",
+                            PartialViewName = "e/_baby"
                         });
                 });
 

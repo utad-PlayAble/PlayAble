@@ -77,6 +77,8 @@ header {
     z-index: 100;
 }
 
+
+
 .titulo {
     font-size: 2rem;
     color: black;
@@ -268,20 +270,86 @@ nav a {
         margin-bottom: 1rem;
     }
 
+/* Botão de Play com Imagem de Fundo */
 .play-button {
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    width: 100px; /* Aumentar o tamanho */
+    height: 100px;
+    background-size: cover; /* Ajustar a imagem ao botão */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Evitar repetição */
+    border-radius: 50%; /* Botão circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    transition: transform 0.3s ease;
 }
 
     .play-button:hover {
-        background-color: #3a5a8f;
+        transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
     }
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid white; /* Ícone de play */
+    margin-left: 5px;
+    z-index: 1; /* Garantir {que o ícone fique acima do fundo */
+}
+
+
+.jogo-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Jogos Relacionados */
+.jogo-thumbnail {
+    background-size: cover; /* Ajustar a imagem ao container */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Evitar repetição */
+    width: 100%;
+    height: 150px; /* Ajustar altura */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jogo-card {
+    background-color: #8ca4e8;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+    .jogo-card:hover {
+        transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    }
+
+.jogo-titulo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-top: 10px;
+    text-align: center;
+}
+
 
 /* Seção de Instruções */
 .game-instructions {
@@ -499,16 +567,18 @@ footer {
 }
 
 .jogo-thumbnail {
-    background-color: white;
-    width: 100%;
-    height: 120px;
-    border-radius: 10px;
+    background-size: cover; /* Ajusta a imagem ao tamanho do container */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição */
+    width: 100%; /* Largura total do container */
+    height: 150px; /* Altura ajustada */
+    border-radius: 10px; /* Cantos arredondados */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites */
 }
-
 .jogo-titulo {
     display: flex;
     justify-content: space-between;
@@ -521,12 +591,14 @@ footer {
 .play-button {
     width: 60px;
     height: 60px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco translúcido */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: absolute; /* Posiciona o botão no centro */
+    z-index: 1; /* Garante que o botão fique acima do fundo */
 }
 
 .play-icon {
@@ -534,7 +606,7 @@ footer {
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 18px solid black;
+    border-left: 18px solid black; /* Ícone de play */
     margin-left: 4px;
 }
 
