@@ -6,27 +6,20 @@ using utad.PlayAble.Models;
 
 namespace utad.PlayAble.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel(utadPlayAbleContext context) : PageModel
 {
-    private readonly utadPlayAbleContext _context;
-
-    public IndexModel(utadPlayAbleContext context)
-    {
-        _context = context;
-    }
-
     public Dictionary<string, List<Game>> GamesByCategory { get; set; } = new();
 
     public async Task OnGetAsync()
     {
-        var categories = await _context.Games
+        var categories = await context.Games
             .Select(g => g.Category)
             .Distinct()
             .ToListAsync();
 
         foreach (var category in categories)
         {
-            var games = await _context.Games
+            var games = await context.Games
                 .Where(g => g.Category == category)
                 .ToListAsync();
 
@@ -39,13 +32,13 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnGetIsFavoriteAsync(int gameId)
     {
-        var userId = User.Identity?.Name; // Assumindo que o nome do usu·rio È o ID
+        var userId = User.Identity?.Name;
         if (userId == null)
         {
             return Unauthorized();
         }
 
-        var isFavorite = await _context.UserFavoriteGames
+        var isFavorite = await context.UserFavoriteGames
             .AnyAsync(f => f.UserId == userId && f.GameId == gameId);
 
         return new JsonResult(new { isFavorite });
@@ -53,42 +46,50 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPostToggleFavoriteAsync(int gameId)
     {
-        var userId = User.Identity?.Name; // Assumindo que o nome do usu·rio È o ID
+        var userId = User.Identity?.Name; 
         if (userId == null)
         {
             return Unauthorized();
         }
 
-        var favorite = await _context.UserFavoriteGames
+        var favorite = await context.UserFavoriteGames
             .FirstOrDefaultAsync(f => f.UserId == userId && f.GameId == gameId);
 
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
         if (user == null)
         {
-            return NotFound("Usu·rio n„o encontrado.");
+            return NotFound("User n√£o encontrado.");
         }
 
 
         if (favorite == null)
         {
-            // Criar nova relaÁ„o
+            // verifica se o jogo existe
+            var game = await context.Games.FindAsync(gameId);
+
+            if (game == null)
+            {
+                return NotFound("Jogo n√£o encontrado.");
+            }
+            
+            // criar rela√ß√£o
             favorite = new UserFavoriteGame
             {
                 User = user,
                 UserId = userId,
                 GameId = gameId,
-                Game = await _context.Games.FindAsync(gameId),
+                Game = game,
                 FavoritedAt = DateTime.Now
             };
-            _context.UserFavoriteGames.Add(favorite);
+            context.UserFavoriteGames.Add(favorite);
         }
         else
         {
-            // Remover relaÁ„o existente
-            _context.UserFavoriteGames.Remove(favorite);
+            // remover rela√ß√£o existente
+            context.UserFavoriteGames.Remove(favorite);
         }
 
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync();
         return new JsonResult(new { success = true });
     }
 }
