@@ -6,7 +6,6 @@
     <title>playAble - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/utad.PlayAble.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,10 +15,25 @@
                 <img src="/assets/logo.svg" alt="Logo" style="height: 35px; margin: 10px;">
             </a>
         </div>
+        
+        <div class="grid-item searchbar">
+            <form id="searchForm" method="get" action="/search" style="display: flex; width:100%;">
+                <input style="flex-grow:1;" type="text" name="q" class="uni" placeholder="Procurar jogos" value="@Context.Request.Query["q"]">
+                <button type="submit" class="button">
+                    <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.886 13.54c3.266 0 5.914-2.54 5.914-5.672 0-3.134-2.648-5.673-5.914-5.673-3.266 0-5.914 2.54-5.914 5.673.007 3.13 2.65 5.665 5.913 5.672h.001zM0 7.867v-.011C0 3.679 3.53.29 7.886.29c4.355 0 7.885 3.388 7.885 7.565a7.34 7.34 0 01-1.668 4.654l6.584 6.287a.923.923 0 01.313.692c0 .522-.441.945-.986.945-.283 0-.54-.115-.72-.3l-6.572-6.305a8.047 8.047 0 01-4.836 1.59C3.535 15.42.007 12.04 0 7.868v-.001z" fill="#fff" fill-rule="nonzero"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+        
+        
         <nav class="nav-menu">
             <ul>
-                <li><a class="nav a" href="/home/Help">AJUDA</a></li>
+                <li><a class="nav a" asp-page="/Home/Help">AJUDA</a></li>
+                <li><partial name="_LoginPartial" /></li>
             </ul>
+            
         </nav>
 
     </header>
@@ -35,8 +49,8 @@
                 <img src="/assets/logo.svg" alt="Logo" style="height: 35px; margin: 0.5em 2.5em 0.5em 2em;">
             </div>
             <div class="footer-links">
-            <a href="/home/About">Sobre Nós</a>
-            <a href="/home/Help">Ajuda</a>
+            <a asp-page="/Home/About">Sobre Nós</a>
+            <a asp-page="/Home/Help">Ajuda</a>
             </div>
             <img src="/assets/bixinhos.svg" alt="mascotes da playAble" style="width: 100%; max-width: 240px; margin: 0.5em 2em 1em 2em;">
     </footer>

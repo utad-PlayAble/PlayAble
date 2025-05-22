@@ -272,35 +272,28 @@ nav a {
 
 /* Botão de Play com Imagem de Fundo */
 .play-button {
-    width: 100px; /* Aumentar o tamanho */
-    height: 100px;
-    background-size: cover; /* Ajustar a imagem ao botão */
-    background-position: center; /* Centralizar a imagem */
-    background-repeat: no-repeat; /* Evitar repetição */
-    border-radius: 50%; /* Botão circular */
+    width: 140px; /* Increased width */
+    height: 60px; /* Reduced height */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 30px; /* Half of height for pill shape */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
-    transition: transform 0.3s ease;
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-    .play-button:hover {
-        transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-    }
-
-.play-icon {
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 25px solid white; /* Ícone de play */
-    margin-left: 5px;
-    z-index: 1; /* Garantir {que o ícone fique acima do fundo */
+.play-button:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
+.play-button img {
+    height: 40px; /* Adjust image size */
+    width: auto;
+}
 
 .jogo-container {
     width: 100%;
@@ -587,29 +580,6 @@ footer {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
 }
-
-.play-button {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco translúcido */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: absolute; /* Posiciona o botão no centro */
-    z-index: 1; /* Garante que o botão fique acima do fundo */
-}
-
-.play-icon {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 18px solid black; /* Ícone de play */
-    margin-left: 4px;
-}
-
 
 #game {
     display: none;
