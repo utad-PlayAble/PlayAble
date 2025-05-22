@@ -12,8 +12,8 @@ using utad.PlayAble.Data;
 namespace utad.PlayAble.Migrations
 {
     [DbContext(typeof(utadPlayAbleContext))]
-    [Migration("20250509202933_etc")]
-    partial class etc
+    [Migration("20250522180518_NewGameSys")]
+    partial class NewGameSys
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,16 +235,17 @@ namespace utad.PlayAble.Migrations
 
             modelBuilder.Entity("utad.PlayAble.Models.Game", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Credits")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<DateTime>("DateAdded")
                         .HasColumnType("datetime2");
@@ -257,11 +258,6 @@ namespace utad.PlayAble.Migrations
                     b.Property<int>("FavoriteCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
                     b.Property<string>("Instructions")
                         .IsRequired()
                         .HasMaxLength(1000)
@@ -272,28 +268,18 @@ namespace utad.PlayAble.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("PartialViewName")
+                    b.Property<string>("Path")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<string>("Tags")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Games");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Category = "Puzzle",
-                            DateAdded = new DateTime(2025, 5, 9, 21, 29, 32, 641, DateTimeKind.Local).AddTicks(6487),
-                            Description = "O clássico jogo de quebra-cabeças onde você deve encaixar peças que caem para formar linhas completas.",
-                            FavoriteCount = 120,
-                            ImageUrl = "/images/games/tetris.jpg",
-                            Instructions = "Use as setas do teclado para mover as peças. Pressione a tecla para baixo para acelerar a queda. Pressione a tecla de espaço para girar a peça.",
-                            Name = "Tetris",
-                            PartialViewName = "e/_tetris"
-                        });
                 });
 
             modelBuilder.Entity("utad.PlayAble.Models.UserFavoriteGame", b =>
@@ -301,8 +287,8 @@ namespace utad.PlayAble.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("GameId")
-                        .HasColumnType("int");
+                    b.Property<string>("GameId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("FavoritedAt")
                         .HasColumnType("datetime2");

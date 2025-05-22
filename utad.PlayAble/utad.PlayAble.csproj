@@ -18,7 +18,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Games\" />
+    <None Include="wwwroot\games\Bomboclat\index.html" />
+    <None Include="wwwroot\games\Bomboclat\playable-meta\thumb.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\assets\g\tetris.png" />
+    <_ContentIncludedByDefault Remove="Pages\e\_tetris.cshtml" />
   </ItemGroup>
 
 </Project>

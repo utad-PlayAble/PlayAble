@@ -1,0 +1,12 @@
+﻿{
+  "Title": "Bomboclat",
+  "Description": "A game where you have to dodge bombs and collect coins.",
+  "Instructions": "setinhas e etc",
+  "Credits": "cg",
+  "Category": "Action",
+    "Tags": [
+        "Action",
+        "Dodge",
+        "Collect"
+    ]
+}
