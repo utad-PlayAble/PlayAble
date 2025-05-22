@@ -1,0 +1,204 @@
+﻿@page
+@model ListModel
+@{
+    ViewData["Title"] = "playAble: Pesquisa de Jogos";
+    var resultados = ViewData["resultados"] as List<Models.Game>;
+    var cgeneros = ViewData["cgeneros"] as List<string>;
+    var currentPage = ViewData["currentPage"] as int? ?? 1;
+    var totalPages = ViewData["totalPages"] as int? ?? 1;
+}
+
+<div class="grid-autores">
+    <div class="grid-titleautores">
+        Pesquisa de Jogos
+    </div>
+</div>
+
+<div class="primeiralinha">
+    <div class="XdeXresultados bookstxt left-column"> @ViewData["textoresultados"]</div>
+
+    <div class="pageCounter right-column">
+            <button class="buttonreq" onclick="changePage(-1)" @if (currentPage == 1){<text>disabled</text>}>&lt
+            </button>
+            <span>Página @currentPage de @totalPages</span>
+            <button class="buttonreq" onclick="changePage(1)" @if (currentPage == totalPages)
+            {
+                <text>disabled</text>
+            }>&gt</button>
+        </div>
+</div>
+
+<div class="segundalinha">
+    <div class="left-column2">
+        <div class="seletorOrdenarPor">
+            <label class="bookstitle" for="sort">Ordenar por:</label>
+            <select id="sort" class="booksselect" onchange="updateSortQueryString()">
+                <option style="font-family: Arial" value="popular">Mais favoritados</option>
+                <option style="font-family: Arial" value="popular-inv">Menos favoritados</option>
+                <option style="font-family: Arial" value="alpha-az">Alfabeticamente (A-Z)</option>
+                <option style="font-family: Arial" value="alpha-za">Alfabeticamente (Z-A)</option>
+                <option style="font-family: Arial" value="data-desc">Mais recente para mais antigo</option>
+                <option style="font-family: Arial" value="data-asc">Mais antigo para mais recente</option>
+            </select>
+        </div>
+
+
+        <div class="seletorNresultados">
+            <label class="bookstitle" for="npp">Resultados por página:</label>
+            <select id="npp" class="booksselect" onchange="updateNPPQueryString()">
+                <option style="font-family: Arial" value="15">15</option>
+                <option style="font-family: Arial" value="30">30</option>
+                <option style="font-family: Arial" value="60">60</option>
+                <option style="font-family: Arial" value="90">90</option>
+            </select>
+        </div>
+
+        <div class="filtros">
+           
+            @if (cgeneros != null && cgeneros.Count > 0)
+            {
+                <div class="filtro seletorGeneros">
+                    <label class="bookstitle">Géneros</label>
+                    @foreach (var g in cgeneros)
+                    {
+                        <div class="filter-option">
+                            <input type="checkbox" id="@g">
+                            <label class="bookstxt" for="@g">@g</label>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+        <button class="buttonreq" style="max-width:82%" onclick="updateFilterQueryString()">Aplicar filtros</button>
+    </div>
+    <div class="right-column2">
+
+        @if (resultados == null || !resultados.Any())
+        {
+            <p>&lt; sem resultados &gt</p>
+        }
+        else
+        {
+            @foreach (var jogo in resultados)
+            {
+                <div class="grid-book">
+                    <div>
+                        <a href="/game/@jogo.Path">
+                            <div>
+                                <img width="175" src="/games/@jogo.Path/playable-meta/thumb.png" alt="Imagem do jogo @jogo.Name" />
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/game/@jogo.Path">
+                            @jogo.Name
+                        </a>
+                    </div>
+                    <div>
+                        @jogo.Description
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+
+<script>
+    function changePage(direction) {
+        var url = new URL(window.location.href);
+        var currentPage = parseInt(url.searchParams.get('np')) || 1;
+        var newPage = currentPage + direction;
+        url.searchParams.set('np', newPage);
+        window.location.href = url.toString();
+    }
+
+    function updateSortQueryString() {
+        var select = document.getElementById("sort");
+        var selectedValue = select.value;
+        var url = new URL(window.location.href);
+        url.searchParams.set('sort', selectedValue);
+        window.location.href = url.toString();
+    }
+
+    function updateNPPQueryString() {
+        var select = document.getElementById("npp");
+        var selectedValue = select.value;
+        var url = new URL(window.location.href);
+        url.searchParams.set('npp', selectedValue);
+        window.location.href = url.toString();
+    }
+
+    function updateFilterQueryString() {
+        var url = new URL(window.location.href);
+        var generos = document.querySelectorAll('.seletorGeneros input:checked');
+
+        var generosIds = Array.from(generos).map(g => g.id);
+
+        url.searchParams.set('generos', generosIds.join(';'));
+
+        window.location.href = url.toString();
+    }
+
+
+    function setSortSelection() {
+        var url = new URL(window.location.href);
+        var sortValue = url.searchParams.get('sort');
+        if (sortValue) {
+            var select = document.getElementById("sort");
+            select.value = sortValue;
+        }
+    }
+
+    function setNPPSelection() {
+        var url = new URL(window.location.href);
+        var resultsValue = url.searchParams.get('npp');
+        if (resultsValue) {
+            var select = document.getElementById("npp");
+            select.value = resultsValue;
+        }
+    }
+
+    function setFiltrosSelection() {
+        var url = new URL(window.location.href);
+        var generos = url.searchParams.get('generos');
+        var autores = url.searchParams.get('autores');
+        var editores = url.searchParams.get('editores');
+
+        if (generos) {
+            var generosIds = generos.split(';');
+            generosIds.forEach(id => {
+                var input = document.getElementById(id);
+                if (input) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        if (autores) {
+            var autoresIds = autores.split(';');
+            autoresIds.forEach(id => {
+                var input = document.getElementById(id);
+                if (input) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        if (editores) {
+            var editoresIds = editores.split(';');
+            editoresIds.forEach(id => {
+                var input = document.getElementById(id);
+                if (input) {
+                    input.checked = true;
+                }
+            });
+        }
+    
+    }
+
+    document.addEventListener("DOMContentLoaded", setSortSelection);
+    document.addEventListener("DOMContentLoaded", setNPPSelection);
+    document.addEventListener("DOMContentLoaded", setFiltrosSelection);
+</script>
