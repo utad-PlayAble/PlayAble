@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<head>
+	<title>King's Tiles</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<audio id="menuMusic_element" src="music/menu_perfect setup!.mp3" preload="auto"></audio>
+	<div id="menu">
+		<h1>King's Tiles</h1>
+
+		<ul>
+			<li><a href="#" id="play">Play</a></li>
+			<li><a href="#" id="load">Load</a></li>
+			<li><a href="#" id="create">Create</a></li>
+			<li><a href="#" id="settings">Settings</a></li>
+			<li><a href="#" id="about">About</a></li>
+		</ul>
+	</div>
+	<div id="main" style="display: none;">
+		<div class="controls_top">
+			<a href="#" id="backToMenu">Back to Menu</a> <a href="#" id="levelSelectDisplay">Level</a> <a href="#" class="settingsButton">Settings</a>
+		</div><br>
+		<table id="gameboard" border=1>
+			<tr>
+				<td><a href="#" id="r1c1" class="off1">O</a></td>
+				<td><a href="#" id="r1c2" class="off1">O</a></td>
+				<td><a href="#" id="r1c3" class="off1">O</a></td>
+				<td><a href="#" id="r1c4" class="off1">O</a></td>
+				<td><a href="#" id="r1c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r2c1" class="off1">O</a></td>
+				<td><a href="#" id="r2c2" class="off1">O</a></td>
+				<td><a href="#" id="r2c3" class="off1">O</a></td>
+				<td><a href="#" id="r2c4" class="off1">O</a></td>
+				<td><a href="#" id="r2c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r3c1" class="off1">O</a></td>
+				<td><a href="#" id="r3c2" class="off1">O</a></td>
+				<td><a href="#" id="r3c3" class="off1">O</a></td>
+				<td><a href="#" id="r3c4" class="off1">O</a></td>
+				<td><a href="#" id="r3c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r4c1" class="off1">O</a></td>
+				<td><a href="#" id="r4c2" class="off1">O</a></td>
+				<td><a href="#" id="r4c3" class="off1">O</a></td>
+				<td><a href="#" id="r4c4" class="off1">O</a></td>
+				<td><a href="#" id="r4c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r5c1" class="off1">O</a></td>
+				<td><a href="#" id="r5c2" class="off1">O</a></td>
+				<td><a href="#" id="r5c3" class="off1">O</a></td>
+				<td><a href="#" id="r5c4" class="off1">O</a></td>
+				<td><a href="#" id="r5c5" class="off1">O</a></td>
+			</tr>
+		</table>
+		<div class="controls_bottom">
+			<a href="#" id="resetButton">Reset</a>
+		</div>
+	</div>
+
+	<div id="createPage" style="display: none;">
+		<div class="controls_top">
+			<a href="#" id="backToMenu_create">Back to Menu</a> <a href="#" id="getCode">Get Code</a> <a href="#" class="settingsButton">Settings</a>
+		</div><br>
+		<table id="gameboard_create" border=1>
+			<tr>
+				<td><a href="#" id="r1c1" class="off1">O</a></td>
+				<td><a href="#" id="r1c2" class="off1">O</a></td>
+				<td><a href="#" id="r1c3" class="off1">O</a></td>
+				<td><a href="#" id="r1c4" class="off1">O</a></td>
+				<td><a href="#" id="r1c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r2c1" class="off1">O</a></td>
+				<td><a href="#" id="r2c2" class="off1">O</a></td>
+				<td><a href="#" id="r2c3" class="off1">O</a></td>
+				<td><a href="#" id="r2c4" class="off1">O</a></td>
+				<td><a href="#" id="r2c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r3c1" class="off1">O</a></td>
+				<td><a href="#" id="r3c2" class="off1">O</a></td>
+				<td><a href="#" id="r3c3" class="off1">O</a></td>
+				<td><a href="#" id="r3c4" class="off1">O</a></td>
+				<td><a href="#" id="r3c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r4c1" class="off1">O</a></td>
+				<td><a href="#" id="r4c2" class="off1">O</a></td>
+				<td><a href="#" id="r4c3" class="off1">O</a></td>
+				<td><a href="#" id="r4c4" class="off1">O</a></td>
+				<td><a href="#" id="r4c5" class="off1">O</a></td>
+			</tr>
+			<tr>
+				<td><a href="#" id="r5c1" class="off1">O</a></td>
+				<td><a href="#" id="r5c2" class="off1">O</a></td>
+				<td><a href="#" id="r5c3" class="off1">O</a></td>
+				<td><a href="#" id="r5c4" class="off1">O</a></td>
+				<td><a href="#" id="r5c5" class="off1">O</a></td>
+			</tr>
+		</table>
+		<div class="controls_bottom">
+			<a href="#" id="gameMode">Mode: grid</a> <a href="#" id="resetButton_create">Reset</a>
+		</div>
+	</div>
+
+	<div id="settingsPage" style="display: none;">
+		<h1>Settings</h1>
+
+		<div style="width: 50%; float: left;">
+			Music
+				<label class="switch" for="musicSlider">
+				  <input type="checkbox" id="musicSlider">
+				  <span class="slider"></span>
+				</label><br>
+			Sound
+				<label class="switch" for="soundSlider">
+				  <input type="checkbox" id="soundSlider">
+				  <span class="slider"></span><br>
+				</label><br>
+			<a href="#" class="inlineButton" id="resetProgress">Reset Progress</a>
+		</div>
+		<div style="width: 50%; float: left;">
+			Board theme:<br>
+				<input type="radio" name="themeChooser" id="theme1" checked>
+				<label for="theme1"><img src="img/preview_button1.png" alt="Theme 1 - Gold/black"></label><br>
+				<input type="radio" name="themeChooser" id="theme2">
+				<label for="theme2"><img src="img/preview_button2.png" alt="Theme 2 - Blue/purple"></label><br>
+				<input type="radio" name="themeChooser" id="theme3">
+				<label for="theme3"><img src="img/preview_button3.png" alt="Theme 2 - Purple/gold"></label>
+		</div>
+
+		<div class="centered">
+			<a href="#" class="inlineButton back">Back</a>
+		</div>
+	</div>
+
+	<div id="modular" style="display: none;">
+		<h1>Dialog Title</h1>
+
+		<p>Text for the dialog box goes here</p>
+	</div>
+
+	<div id="aboutPage" style="display: none;">
+		<h1>About</h1>
+
+		<p>King's Tiles was made in a week for the <a href="https://itch.io/jam/discmaster-jam" target="_blank">Discmaster Game Jam</a> on Itch.io. The challenge was to include as many assets from the Discmaster archives as possible in the making of a new game. I chose this particular puzzle game, which has been <a href="https://www.jaapsch.net/puzzles/lights.htm" target="_blank">known by several names throughout history</a>, because it's always been a favorite of mine. Growing up in the 90's I had both of the hand-held versions of the game made by Tiger Electronics, called <a href="https://en.wikipedia.org/wiki/Lights_Out_(game)" target="_blank">"Lights Out!"</a> and I spent many long hours with them, mostly after bedtime, playing through the puzzles over and over again.</p>
+
+		<p>King's Tiles is coded entirely by me, Bekah Jones, in plain-old Javascript, HTML, and CSS. I try to keep my code well commented, so feel free to look through the source and add on to it, or use it as a learning tool.</p>
+
+		<ul>
+			<li><a href="https://thefrugalgamer.itch.io/" target="_blank">Itch.io page</a></li>
+			<li><a href="https://www.thefrugalgamer.net" target="_blank">Personal webpage</a></li>
+		</ul>
+
+		<a href="#" class="button">Back</a>
+	</div>
+</body>
+<script src="game.js"></script>
+</HTML>
