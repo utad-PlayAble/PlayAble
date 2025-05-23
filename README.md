@@ -91,3 +91,4 @@ Os jogos selecionados têm seu código-fonte original disponível publicamente n
 Disponibilizamos abaixo uma lista completa dos jogos incluídos neste repositório, acompanhada dos links onde o códigos-fonte dos mesmos pode ser encontrado. É importante salientar que o código disponível neste repositório pode diferir do código fonte original devido à possível necessidade de adaptar os jogos ao nosso sistema, bem como a atualizações que os jogos poderão ter recebido depois de terem sido integrados neste projeto.
 
 * [Bomboclat](https://github.com/Daydream127/CG-BOMBERMAN)
+* [King Tiles](https://thefrugalgamer.itch.io/kings-tiles)
