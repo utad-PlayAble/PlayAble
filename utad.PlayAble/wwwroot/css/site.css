@@ -276,6 +276,7 @@ nav a {
 .jogo-container {
     width: 100%;
     height: 100%;
+    display: flex;
 }
 
 /* Jogos Relacionados */
@@ -284,7 +285,7 @@ nav a {
     background-position: center; /* Centralizar a imagem */
     background-repeat: no-repeat; /* Evitar repetição */
     width: 100%;
-    height: 150px; /* Ajustar altura */
+    height: 100%; /* Ajustar altura */
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -498,17 +499,26 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    justify-content: center;
+    gap: 1.5rem; /* Espaço entre thumbnail e botão */
+    width: 100%;
+    height: 100%; /* Ajuste conforme necessário */
+    background-color: #8ca4e8;
+    border-radius: 10px;
+    box-shadow: 12px 12px 0px #515b85;
+    margin: 2rem 0;
 }
 
-.jogo-container {
+.jogo-container .game-thumb {
+    flex: 3;
     width: 300px; /* ajuste conforme necessário */
-    height: 200px; /* ajuste conforme necessário */
+    height: 100%; /* ajuste conforme necessário */
     background-size: cover;
-    background-position: center;
+    align-items: center;
     border-radius: 12px;
-    margin-bottom: 16px; /* espaço entre imagem e botão */
+    margin: 32px; /* espaço entre imagem e botão */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Game div to fill the container (optional) */
@@ -518,11 +528,12 @@ footer {
 }
 
 .play-button {
+    flex:1;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
-    margin: 0 auto; /* centraliza horizontalmente */
+    margin: 0; /* centraliza horizontalmente */
     display: block;
 }
 
@@ -766,5 +777,14 @@ footer {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 20px;
+}
+
+.game-thumb {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
 }
 
