@@ -83,3 +83,13 @@ Neste momento, não existe um sistema automático para remover jogos após estes
 4. Remover a pasta do jogo do diretório `/wwwroot/games/`.
 
 Este procedimento deve ser realizado por utilizadores com experiência em bases de dados SQL, com a aplicação encerrada, e com todos os devidos cuidados para evitar perdas de dados indesejadas. 
+
+## Fair use
+
+Este projeto foi desenvolvido no contexto de uma unidade curricular universitária, com fins exclusivamente educacionais e sem qualquer objetivo lucrativo. Para facilitar a avaliação do trabalho realizado e ilustrar a funcionalidade da plataforma com diversos exemplos, este repositório inclui alguns jogos que não são de nossa autoria.
+
+Os jogos selecionados têm seu código-fonte original disponível publicamente na internet e são utilizados apenas para demonstrar a operação da plataforma com uma variedade de jogos. Eles são empregados sem fins lucrativos, ao abrigo do fair use e com a devida atribuição nos metadados usados para configurar a plataforma, bem como nas páginas dos respectivos jogos acessíveis ao usuário.
+
+Disponibilizamos abaixo uma lista completa dos jogos incluídos neste repositório, acompanhada dos links onde o códigos-fonte dos mesmos pode ser encontrado. É importante salientar que o código disponível neste repositório pode diferir do código fonte original devido à possível necessidade de adaptar os jogos ao nosso sistema, bem como a atualizações que os jogos poderão ter recebido depois de terem sido integrados neste projeto.
+
+* [Bomboclat](https://github.com/Daydream127/CG-BOMBERMAN)
