@@ -92,3 +92,8 @@ Disponibilizamos abaixo uma lista completa dos jogos incluídos neste repositór
 
 * [Bomboclat](https://github.com/Daydream127/CG-BOMBERMAN)
 * [King Tiles](https://thefrugalgamer.itch.io/kings-tiles)
+* [Racer](https://github.com/jakesgordon/javascript-racer/)
+* [Clumsy Bird](https://github.com/ellisonleao/clumsy-bird)
+* [2048](https://github.com/gabrielecirulli/2048)
+* [0hh1](https://github.com/florisluiten/0hh1)
+* [Hextris](https://github.com/Hextris/hextris)
