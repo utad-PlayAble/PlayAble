@@ -1,0 +1,7 @@
+﻿{
+    "Title": "0hh1",
+    "Description": "Um jogo de logica.",
+    "Instructions": "Clique nos tiles para alternar as luzes. O objetivo é desligar todas as luzes no grid. Cada clique afeta o tile clicado e os tiles adjacentes em forma de cruz.|O jogo possui 50 níveis desafiadores.|Use o seletor de temas para personalizar a aparência do jogo.|Crie seus próprios níveis e compartilhe-os usando a funcionalidade de cópia e colagem.",
+    "Credits": "https://github.com/florisluiten/0hh1?tab=readme-ov-file",
+    "Category": "Puzzle"
+}

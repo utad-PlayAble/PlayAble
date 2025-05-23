@@ -1,0 +1,7 @@
+﻿{
+    "Title": "Racer",
+    "Description": "Um simples jogo de corridas",
+    "Instructions": "Usa a setas para percorrer a estrada e nao acertes nos outros carros.",
+    "Credits": "https://github.com/jakesgordon/javascript-racer/",
+    "Category": "Arcade"
+}

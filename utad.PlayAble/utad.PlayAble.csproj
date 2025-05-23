@@ -20,6 +20,7 @@
   <ItemGroup>
     <None Include="wwwroot\games\Bomboclat\index.html" />
     <None Include="wwwroot\games\Bomboclat\playable-meta\thumb.png" />
+    <None Include="wwwroot\games\Hextris\.github\FUNDING.yml" />
   </ItemGroup>
 
   <ItemGroup>
