@@ -20,20 +20,20 @@
 
     @foreach (var category in Model.GamesByCategory.Keys)
     {
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="gametitle" style="display: flex; justify-content: space-between; align-items: center;">
             <h2 class="titulo">@category</h2>
+            <a href="/"> Mais Jogos desta Categoria</a>
         </div>
 
         <div class="game-categories">
             @foreach (var game in Model.GamesByCategory[category])
             {
-                <div class="recazul">
+                <div class="recazul-jogos">
                     <a href="/game/@game.Path">
-                        <div class="divrec">
-                            <img src="/games/@game.Path/playable-meta/thumb.png" style="width: 16rem" alt="Imagem do jogo @game.Name" />
-                            <div style="display: flex; align-items: center; justify-content: space-between;">
-                                <p class="texto-normal">@game.Name</p>
-                                <p class="texto-normal">@game.Description</p>
+                        <div class="recazul-conteudo">
+                            <img src="/games/@game.Path/playable-meta/thumb.png" alt="Imagem do jogo @game.Name" />
+                            <div class="recazul-texto">
+                                <p>@game.Name</p>
                             </div>
                         </div>
                     </a>

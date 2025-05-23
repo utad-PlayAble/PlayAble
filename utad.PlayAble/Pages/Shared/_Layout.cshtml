@@ -12,7 +12,7 @@
     <header>
         <div>
             <a href="/">
-                <img src="/assets/logo.svg" alt="Logo" style="height: 35px; margin: 10px;">
+                <img src="/assets/logo.svg" alt="Logo" style="height: 32px; margin: 10px;">
             </a>
         </div>
         
@@ -30,7 +30,6 @@
         
         <nav class="nav-menu">
             <ul>
-                <li><a class="nav a" asp-page="/Home/Help">AJUDA</a></li>
                 <li><partial name="_LoginPartial" /></li>
             </ul>
             
@@ -38,11 +37,94 @@
 
     </header>
 
+    <div class="shortcut-bar">
+        <a asp-page="/Home/Help">
+            <span class="shortcut-icon">
+                <img src=" /assets/iconesipc/question-mark-svgrepo-com.svg" alt="ajuda" />
+            </span>
+            Ajuda</a>
+        <p class="divisao">|</p>
+        <ul>
+            <li>
+                <a href="/list?cat=matematica">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/blackboard-svgrepo-com.svg" alt="matemática"  />
+                    </span>
+                    Matemática
+                </a>
+            </li>
+            <li>
+                <a href="/list?cat=letras">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/cubes-abc-svgrepo-com(1).svg" alt="letras"  />
+                    </span>
+                    Letras
+                </a>
+            </li>
+            <li>
+                <a href="/list?cat=ciencia">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/science-svgrepo-com.svg" alt="ciência"  />
+                    </span>
+                    Ciência
+                </a>
+            </li>
+            <li>
+                <a href="/list?cat=globo">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/geography-svgrepo-com.svg" alt="geografia"  />
+                    </span>
+                    Geografia
+                </a>
+            </li>
+            <li>
+                <a href="/list?cat=colorir">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/painting-art-svgrepo-com.svg" alt="colorir" />
+                    </span>
+                    Colorir
+                </a>
+            </li>
+            <li>
+                <a href="/list?cat=musica">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/musical-notes-svgrepo-com(1).svg" alt="música"  />
+                    </span>
+                    Música
+                </a>
+            </li>
+            <li>
+                <a href="/list?cat=memoria">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/brain-13-svgrepo-com.svg" alt="memória"  />
+                    </span>
+                    Memória
+                </a>
+            </li>
+            <li>
+                <a href="/list?cat=puzzle">
+                    <span class="shortcut-icon">
+                        <img src="~/assets/iconesipc/puzzle-9-svgrepo-com.svg" alt="puzzle"  />
+
+                    </span>
+                    Puzzle
+                </a>
+            </li>
+        </ul>
+        <p class="divisao">|</p>
+        <a asp-page=" ">
+            <span class="shortcut-icon">
+                <img src="~/assets/iconesipc/star-svgrepo-com(1).svg" alt="favoritos"  />
+            </span>
+            Favoritos</a>
+    </div>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
 
     <footer>
             <div class="footer-logo">
