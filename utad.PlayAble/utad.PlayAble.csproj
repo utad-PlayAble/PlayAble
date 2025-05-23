@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\games\MathQuiz\playable-meta\" />
   </ItemGroup>
 
 </Project>
