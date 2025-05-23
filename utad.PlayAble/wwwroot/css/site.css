@@ -770,3 +770,206 @@ footer {
     background: #fff;
 }
 
+/* --- List Page Custom Styles --- */
+.list-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(74, 111, 165, 0.10);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.list-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.list-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
+}
+
+.list-results-info {
+    font-size: 1.1rem;
+    color: #222;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.list-main {
+    display: flex;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.list-sidebar {
+    flex: 0 0 270px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(74, 111, 165, 0.08);
+    padding: 2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+    .list-sidebar label {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.3rem;
+    }
+
+    .list-sidebar select,
+    .list-sidebar button {
+        margin-top: 0.4rem;
+        width: 100%;
+    }
+
+    .list-sidebar .filter-option label {
+        font-weight: 500;
+        color: #333;
+        font-size: 1rem;
+    }
+
+    .list-sidebar .filter-option input[type="checkbox"] {
+        accent-color: var(--primary-color);
+        margin-right: 0.5em;
+    }
+
+    .list-sidebar .star-checkbox + label {
+        color: #ccc;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+    }
+
+    .list-sidebar .star-checkbox:checked + label {
+        color: gold;
+    }
+
+.list-pagination {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+    .list-pagination button {
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        border: none;
+        background: var(--primary-color);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: background 0.2s;
+    }
+
+        .list-pagination button:disabled {
+            background: #b0b8c9;
+            cursor: not-allowed;
+        }
+
+.list-results {
+    flex: 1;
+    min-width: 0;
+}
+
+.list-game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.list-game-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(74, 111, 165, 0.10);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .list-game-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 8px 24px rgba(74, 111, 165, 0.18);
+    }
+
+.list-game-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: #e9ecef;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.list-game-info {
+    padding: 1.1rem 1rem 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.list-game-title a {
+    color: var(--primary-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+    .list-game-title a:hover {
+        color: var(--secondary-color);
+    }
+
+.list-game-desc {
+    color: #555;
+    font-size: 0.98rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    min-height: 2.5em;
+}
+
+@media (max-width: 1100px) {
+    .list-main {
+        flex-direction: column;
+    }
+
+    .list-sidebar {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .list-container {
+        padding: 1rem 0.2rem;
+    }
+
+    .list-main {
+        gap: 1rem;
+    }
+
+    .list-game-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
+
