@@ -26,7 +26,7 @@ Após este passo, a plataforma está pronta a ser executada e usada, não sendo 
 
 ## Adicionar jogos
 
-A plataforma playAble permite adicionar jogos ao repositório de forma simples, uma vez que a lista dos jogos em base de dados, bem como a lista de categorias, é atualizada cada vez que a aplicação é iniciada. Os jogos devem ser desenvolvidos para a web e capazes de rodar stand-alone num navegador; a página principal do jogo deve ser chamada `index.html`.
+A plataforma playAble permite adicionar jogos ao repositório de forma simples, uma vez que a lista dos jogos em base de dados, bem como a lista de categorias, é atualizada cada vez que a aplicação é iniciada. Os jogos devem ser desenvolvidos para a web e capazes de rodar stand-alone num navegador; a página principal do jogo deve ser chamada `index.html`, uma vez que será para esta que o utilizador será redirecio quando clicar no botão de jogar. Os jogos na playAble são executados apenas pelo seu index, não sendo visível qualquer parte da plataforma durante a gameplay.
 
 Para adicionar um jogo, basta criar um diretório com o short name que pretendemos usar para jogo no diretório `utad.PlayAble/wwwroot/games` e colocar o código fonte do mesmo nesta pasta. O short name que escolhermos será usado no URL do jogo. É também necessário criar, no mesmo diretório, uma pasta chamada `playable-meta`,  onde serão armazenados os ficheiros necessários para o jogo aparecer na plataforma. Neste diretório deve existir um ficheiro `meta.json` com os metadados do jogo, bem como uma imagem `thumb.png`, que será mostrada na página do jogo, na home page e em resultados de pesquisa. O ficheiro json tem o seguinte formato:
 
@@ -72,3 +72,14 @@ utad.PlayAble
 ```
 
 Este jogo, corretamente configurado, está disponível neste repositório no caminho [``utad.PlayAble/wwwroot/games/Bomboclat``](https://github.com/utad-PlayAble/PlayAble/tree/master/utad.PlayAble/wwwroot/games/Bomboclat).
+
+## Remover jogos
+
+Neste momento, não existe um sistema automático para remover jogos após estes terem sido integrados na base de dados. Assim, para remover um jogo, recomenda-se k seguinte procedimento:
+
+1. Identificar a entrada relativa ao jogo a remover na tabela `Games` da base de dados e anotar o seu `Id`.
+2. Remover todas as entradas que contenham o ID supracitado da tabela `UserFavoriteGames`.
+3. Remover a entrada do jogo na tabela `Games`.
+4. Remover a pasta do jogo do diretório `/wwwroot/games/`.
+
+Este procedimento deve ser realizado por utilizadores com experiência em bases de dados SQL, com a aplicação encerrada, e com todos os devidos cuidados para evitar perdas de dados indesejadas. 
