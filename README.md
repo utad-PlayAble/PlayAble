@@ -5,9 +5,9 @@
   </picture>
 </div>
 
----
-
 # playAble - Plataforma digital de minijogos didáticos e acessíveis, para promover a aprendizagem inclusiva e multissensorial.
+
+![build](https://github.com/utad-playAble/playAble/actions/workflows/dotnet.yml/badge.svg)
 
 Este projeto foi desenvolvido no âmbito da unidade curricular Interação Pessoa Computador da [Licenciatura em Engenharia Informática da Universidade de Trás-os-Montes e Alto Douro](https://www.utad.pt/estudar/cursos/engenharia-informatica/).
 
