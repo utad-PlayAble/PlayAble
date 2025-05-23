@@ -45,7 +45,7 @@ public class ListModel(utadPlayAbleContext context) : PageModel
             "Geografia", 
             "Colorir", 
             "Música",
-            "Memória",
+            "Arcade",
             "Puzzle",
         };
 
