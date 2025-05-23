@@ -2,6 +2,6 @@
   "Title": "Bomboclat",
   "Description": "Jogo no estilo Bomberman onde se tem de fugir de ratos assassinos e de apanhar moedas para progredir.",
   "Instructions": "Usa as teclas W-A-S-D para mover o bombardeiro, a tecla C para mudar a câmera e a tecla ESPAÇO para colocar uma bomba.|Tens três vidas, o objetivo é apanhar todas as moedas sem morrer.|Levas dano quando os ratos de atacam ou quando te explodes com uma das tuas bombas.|Tens de usar as bombas para partir os obstáculos no teu caminho e para atacar os teus inimigos, uma bomba dá dano em até três blocos de distância.",
-  "Credits": "Este jogo foi criado no âmbito da Unidade Curricular de Computação Gráfica por blablabla, blebleble, blublublu",
+  "Credits": "Este jogo foi criado no âmbito da unidade curricular de Computação Gráfica da Licenciatura em Engenharia Informática da Universidade de Trás-os-Montes e Alto Douro por David Santos, Diogo Pinto, Filipa Monteiro e João Esteves. O seu código fonte está disponível no repositório Daydream127/CG-BOMBERMAN do GitHub.",
   "Category": "Arcade"
 }
