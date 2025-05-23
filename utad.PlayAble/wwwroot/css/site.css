@@ -250,17 +250,19 @@ nav a {
 
 /* Botão de Play com Imagem de Fundo */
 .play-button {
-    width: 140px; /* Increased width */
-    height: 60px; /* Reduced height */
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 30px; /* Half of height for pill shape */
+    width: 200px; /* Increased width */
+    height: 80px; /* Reduced height */
+    background: #8ca4e8;
+    border-radius: 10px; /* Half of height for pill shape */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     position: absolute;
-    z-index: 1;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
 }
 
 .play-button:hover {
@@ -526,26 +528,6 @@ footer {
     width: 100%;
     height: 100%;
 }
-
-.play-button {
-    flex:1;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0; /* centraliza horizontalmente */
-    display: block;
-}
-
-    .play-button img {
-        width: 60px; /* tamanho do botão */
-        height: 60px;
-        transition: transform 0.2s ease;
-    }
-
-    .play-button:hover img {
-        transform: scale(1.1);
-    }
 
 
 .header-section {
