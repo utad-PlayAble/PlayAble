@@ -97,3 +97,4 @@ Disponibilizamos abaixo uma lista completa dos jogos incluídos neste repositór
 * [2048](https://github.com/gabrielecirulli/2048)
 * [0hh1](https://github.com/florisluiten/0hh1)
 * [Hextris](https://github.com/Hextris/hextris)
+* [MathQuiz](https://github.com/Jisll/MathGame)
