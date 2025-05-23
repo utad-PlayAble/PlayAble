@@ -1,0 +1,7 @@
+﻿{
+  "Title": "King Tiles",
+  "Description": "Recriação do jogo Light's Out; o objetivo é desligar todas as luzes numa grelha 5 por 5.",
+  "Instructions": "Clique nos tiles para alternar as luzes. O objetivo é desligar todas as luzes no grid. Cada clique afeta o tile clicado e os tiles adjacentes em forma de cruz.|O jogo possui 50 níveis desafiadores.|Use o seletor de temas para personalizar a aparência do jogo.|Crie seus próprios níveis e compartilhe-os usando a funcionalidade de cópia e colagem.",
+  "Credits": "Este jogo foi criado para a 2025 Discmaster Jam pelo TheFrugalGamer; o seu código fonte está disponível em https://thefrugalgamer.itch.io/kings-tiles.",
+  "Category": "Puzzle"
+}
