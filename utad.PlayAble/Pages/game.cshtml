@@ -9,23 +9,23 @@
     <div class="container">
         <main>
             <div>
-                <h1 class="titulo" style="text-align: center;">@Model.Game.Name</h1>
+                <h1 class="titulo">@Model.Game.Name</h1>
             </div>
 
             <div class="recazul jogo-principal">
-                <div class="jogo-container" style="background-image: url('/games/@Model.Game.Path/playable-meta/thumb.png');">
-                    
-                    <button title="Botão de jogar" class="play-button" onclick="window.location.href='/games/@Model.Game.Path'">
-                        <img alt="play" src="/assets/play.png"/>
-                    </button>
-                    
-                    <div id="game">
-                    </div>
+                <div class="jogo-container">
+                    <img class="game-thumb"
+                         src="/games/@Model.Game.Path/playable-meta/thumb.png"
+                         alt="Thumbnail do jogo" />
                 </div>
+
+                <button title="Botão de jogar" class="play-button" onclick="window.location.href='/games/@Model.Game.Path'">
+                    <img alt="Jog" src="/assets/play.png" />
+                </button>
             </div>
 
             <section class="game-instructions">
-                <h2>INSTRUÇÕES</h2>
+                <h2 class="titulo">INSTRUÇÕES</h2>
                 <ul>
                     @foreach (var instruction in Model.Game.Instructions.Split('|'))
                     {
@@ -35,7 +35,7 @@
             </section>
             
             <section class="game-instructions">
-                <h2>SOBRE ESTE JOGO</h2>
+                <h2 class="titulo">SOBRE ESTE JOGO</h2>
                 
                 <form method="post" asp-page-handler="ToggleFavorite">
                     <input type="hidden" name="gameId" value="@Model.Game.Id" />

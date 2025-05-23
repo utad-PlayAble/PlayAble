@@ -64,20 +64,24 @@ body {
 }
 
 header {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    position: relative;
+    justify-content: center; /* Centraliza todos os itens */
+    gap: 2rem;
+    padding: 0 2rem;
     background-color: #89a3e8;
     box-shadow: var(--box-shadow);
     position: sticky;
     top: 0;
     z-index: 100;
+    align-items: center;
 }
 
-
+.logo, .user-profile {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
 
 .titulo {
     font-size: 2rem;
@@ -102,7 +106,10 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+}
+
+ol, ul {
+    padding-left: 0rem;
 }
 
 nav a {
@@ -147,8 +154,7 @@ nav a {
 /* Conteúdo Principal */
 .main-content {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+    padding: 0;
 }
 
 .recazul {
@@ -191,34 +197,6 @@ nav a {
     font-size: 1.2rem;
 }
 
-/* Barra de Pesquisa */
-.search-container {
-    margin: 2rem auto;
-    max-width: 600px;
-}
-
-.search-bar {
-    width: 100%;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 50px;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-    margin: 1rem 5rem;
-}
-
-    .search-bar:focus {
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
-    }
-
-
-.divrec {
-    display: flex; 
-    flex-direction: column; 
-    gap:20px
-}
 
 /* Categorias de Jogos */
 .category-title {
@@ -399,6 +377,15 @@ footer {
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    align-self:center;
+}
+
+.footer-links {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-links a {
@@ -410,6 +397,8 @@ footer {
     text-align: center;
     font-weight: 700;
     font-family: raleway;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
     .footer-links a:hover {
@@ -461,8 +450,13 @@ footer {
     }
 }
 
-.nav-menu{
-    color: black
+.nav-item dropdown {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 1rem;
+    font-family: raleway;
 }
 
 /* Estilo checkbox estrela */
@@ -500,32 +494,48 @@ footer {
 
 /*pag jogo*/
 
-.jogo-principal {
-    padding: 20px;
-    text-align: center;
-    height: auto;
+.recazul.jogo-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }
 
 .jogo-container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 300px; /* ajuste conforme necessário */
+    height: 200px; /* ajuste conforme necessário */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 16px; /* espaço entre imagem e botão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.expandir-btn {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
+/* Game div to fill the container (optional) */
+#game {
+    width: 100%;
+    height: 100%;
 }
+
+.play-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 auto; /* centraliza horizontalmente */
+    display: block;
+}
+
+    .play-button img {
+        width: 60px; /* tamanho do botão */
+        height: 60px;
+        transition: transform 0.2s ease;
+    }
+
+    .play-button:hover img {
+        transform: scale(1.1);
+    }
+
 
 .header-section {
     display: flex;
@@ -585,3 +595,176 @@ footer {
     display: none;
     background-color: #333;
 }
+
+/*search bar*/
+
+.grid-item.searchbar {
+    flex: 2; /* Ocupa mais espaço, centralizando */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem; /* Remove margin-left */
+    padding: 0.5rem;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+.uni {
+    width: 550px;  
+    height: 40px;
+    padding: 1rem 2rem;    
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 1.2rem;       
+    background-color: #fff;
+    color: #222;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+
+.grid-item.searchbar button {
+    margin-left: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*shortcut-bar*/
+
+.shortcut-bar {
+    color: white;
+    background-color: #515b85;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid #dbe2ef;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+}
+
+    .shortcut-bar ul {
+        display: flex;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .shortcut-bar a,
+        .shortcut-bar ul li a,
+        .divisao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2em;
+            text-align: center;
+            color: white !important;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 0.5rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+.shortcut-bar a:hover,
+.shortcut-bar ul li a:hover,
+.shortcut-bar a:focus,
+.shortcut-bar ul li a:focus {
+    background: var(--primary-color);
+    color: #fff !important;
+    outline: none;
+}
+
+.shortcut-icon img,
+.shortcut-bar ul li a img {
+    display: block;
+    margin-bottom: 0.2em;
+    width: 32px;
+    height: 32px;
+}
+
+.divisao{
+    font-size: 32px;
+}
+
+/*game card*/
+
+.recazul-jogos{
+    width: 100%;
+    height: 100%;
+    background-color: #8ca4e8; /* Cor azul similar à da imagem */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 12px 12px 0px #515b85; /* Sombra com deslocamento */
+    display: flex;
+    flex-direction: column; /* Centraliza em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.recazul-conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.recazul-conteudo img{
+    margin: 1rem 0 0 0;
+    max-width:200px;
+}
+
+.recazul-texto p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: black !important;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: background 0.2s, color 0.2s;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.recazul-texto > * {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.recazul-texto a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    color: inherit;
+}
+
+.gametitle a {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
