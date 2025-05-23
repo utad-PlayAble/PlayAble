@@ -1,0 +1,7 @@
+﻿{
+    "Title": "2048",
+    "Description": "Recriação do 1024.",
+    "Instructions": "Usa as setas para juntar os numeros.",
+    "Credits": "https://github.com/gabrielecirulli/2048",
+    "Category": "Puzzle"
+}

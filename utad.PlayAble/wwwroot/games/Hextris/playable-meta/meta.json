@@ -1,0 +1,7 @@
+﻿{
+    "Title": "Hextris",
+    "Description": "Um jogo de puzzles viciante inspirado por tetris.",
+    "Instructions": "Usa as setas para juntar as mesmas cores.",
+    "Credits": "https://github.com/Hextris/hextris",
+    "Category": "puzzle"
+}

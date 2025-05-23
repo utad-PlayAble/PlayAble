@@ -1,0 +1,7 @@
+﻿{
+    "Title": "Clumsy Bird",
+    "Description": "Recriação do Flappy Bird salta para passar pelos canos",
+    "Instructions": "Usa as setas para passar por entres os canos",
+    "Credits": "https://github.com/ellisonleao/clumsy-bird",
+    "Category": "Arcade"
+}
