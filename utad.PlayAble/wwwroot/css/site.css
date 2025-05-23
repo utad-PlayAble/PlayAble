@@ -973,3 +973,272 @@ footer {
     }
 }
 
+
+.login-container {
+    max-width: 420px;
+    margin: 3rem auto 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(74, 111, 165, 0.10);
+    padding: 2.5rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.login-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.login-form label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    background: #f8f9fa;
+    color: #222;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    transition: border-color 0.2s;
+}
+
+    .login-form input[type="email"]:focus,
+    .login-form input[type="password"]:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+    }
+
+.login-form .form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.2rem;
+}
+
+.login-form .form-check-label {
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.login-form button[type="submit"] {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1.15rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+    margin-bottom: 0.5rem;
+}
+
+    .login-form button[type="submit"]:hover {
+        background: var(--secondary-color);
+    }
+
+.login-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-end;
+    font-size: 0.98rem;
+    margin-top: 0.5rem;
+}
+
+    .login-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+    }
+
+        .login-links a:hover {
+            color: var(--secondary-color);
+        }
+
+.login-external {
+    max-width: 420px;
+    margin: 2rem auto 0 auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(74, 111, 165, 0.08);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+    .login-external h3 {
+        color: var(--primary-color);
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .login-external button {
+        margin: 0.3rem 0.5rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        border: none;
+        background: var(--primary-color);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: background 0.2s;
+    }
+
+        .login-external button:hover {
+            background: var(--secondary-color);
+        }
+
+@media (max-width: 600px) {
+    .login-container, .login-external {
+        padding: 1.2rem 0.5rem;
+    }
+}
+
+
+.register-container {
+    max-width: 420px;
+    margin: 3rem auto 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(74, 111, 165, 0.10);
+    padding: 2.5rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.register-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.register-form label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    background: #f8f9fa;
+    color: #222;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    transition: border-color 0.2s;
+}
+
+    .register-form input[type="email"]:focus,
+    .register-form input[type="password"]:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+    }
+
+.register-form button[type="submit"] {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1.15rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+    margin-bottom: 0.5rem;
+}
+
+    .register-form button[type="submit"]:hover {
+        background: var(--secondary-color);
+    }
+
+.register-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-end;
+    font-size: 0.98rem;
+    margin-top: 0.5rem;
+}
+
+    .register-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+    }
+
+        .register-links a:hover {
+            color: var(--secondary-color);
+        }
+
+.register-external {
+    max-width: 420px;
+    margin: 2rem auto 0 auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(74, 111, 165, 0.08);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+    .register-external h3 {
+        color: var(--primary-color);
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .register-external button {
+        margin: 0.3rem 0.5rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        border: none;
+        background: var(--primary-color);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: background 0.2s;
+    }
+
+        .register-external button:hover {
+            background: var(--secondary-color);
+        }
+
+@media (max-width: 600px) {
+    .register-container, .register-external {
+        padding: 1.2rem 0.5rem;
+    }
+}
