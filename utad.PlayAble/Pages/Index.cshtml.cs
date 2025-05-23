@@ -18,6 +18,7 @@ public class IndexModel(utadPlayAbleContext context) : PageModel
 
         var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
+        /*
         if (userId != null)
         {
             var favoriteGames = await context.UserFavoriteGames
@@ -31,16 +32,19 @@ public class IndexModel(utadPlayAbleContext context) : PageModel
             
             if (favoriteGameObj.Count > 0)
             {
-                GamesByCategory["Jogos Favoritos"] = favoriteGameObj;
+                // GamesByCategory["Jogos Favoritos"] = favoriteGameObj;
             }
             
         }
-     
+        */
         
         foreach (var category in categories)
         {
             var games = await context.Games
                 .Where(g => g.Category == category)
+                .OrderByDescending(g => g.FavoriteCount)
+                .ThenByDescending(g => g.DateAdded)
+                .Take(4)
                 .ToListAsync();
             
 

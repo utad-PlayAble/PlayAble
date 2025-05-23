@@ -53,8 +53,17 @@
             </select>
         </div>
 
+        
         <div class="filtros">
-           
+            
+            <div class="filtro seletorFavoritos">
+                <div class="filter-option">
+                    <input type="checkbox" id="fav">
+                    <label class="bookstxt" for="fav">Mostrar apenas jogos favoritos</label>
+                </div>
+            </div>
+            
+            
             @if (cgeneros != null && cgeneros.Count > 0)
             {
                 <div class="filtro seletorGeneros">
@@ -133,10 +142,12 @@
     function updateFilterQueryString() {
         var url = new URL(window.location.href);
         var generos = document.querySelectorAll('.seletorGeneros input:checked');
+        var fav = document.getElementById("fav").checked;
 
         var generosIds = Array.from(generos).map(g => g.id);
 
         url.searchParams.set('generos', generosIds.join(';'));
+        url.searchParams.set('favoritos', fav);
 
         window.location.href = url.toString();
     }
@@ -163,17 +174,32 @@
     function setFiltrosSelection() {
         var url = new URL(window.location.href);
         var generos = url.searchParams.get('generos');
+        var fav = url.searchParams.get('favoritos');
         var autores = url.searchParams.get('autores');
         var editores = url.searchParams.get('editores');
 
         if (generos) {
             var generosIds = generos.split(';');
             generosIds.forEach(id => {
-                var input = document.getElementById(id);
-                if (input) {
-                    input.checked = true;
+                var favInput = document.getElementById(id);
+                if (favInput) {
+                    favInput.checked = true;
                 }
             });
+        }
+        
+        if (fav) {
+            var favInput = document.getElementById("fav");
+            var account = document.getElementById('accountDropdown');
+            
+            if (account.innerHTML.includes("A minha conta")) {
+                var currentUrl = encodeURIComponent(window.location.pathname + window.location.search);
+                window.location.href = `/Identity/Account/Login?ReturnUrl=${currentUrl}`;
+            } 
+            
+            if (favInput && fav === "true") {
+                favInput.checked = true;
+            }
         }
 
         if (autores) {

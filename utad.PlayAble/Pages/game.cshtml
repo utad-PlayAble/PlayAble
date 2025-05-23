@@ -59,10 +59,19 @@
             <div class="jogos-relacionados">
                 @if (Model.RelatedGames.Any())
                 {
-                    @foreach (var relatedGame in Model.RelatedGames)
+                    @foreach (var game in Model.RelatedGames)
                     {
-                        <div class="jogo-card">
-                        </div>
+                            <div class="recazul-jogos">
+                                <a href="/game/@game.Path">
+                                    <div class="recazul-conteudo">
+                                        <img src="/games/@game.Path/playable-meta/thumb.png" alt="Imagem do jogo @game.Name" />
+                                        <div class="recazul-texto">
+                                            <p>@game.Name</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
                     }
                 }
                 else

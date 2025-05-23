@@ -19,6 +19,7 @@ public class ListModel(utadPlayAbleContext context) : PageModel
         var np = Request.Query["np"].ToString();
         var sort = Request.Query["sort"].ToString();
         var generos = Request.Query["generos"].ToString();
+        var favoritos = Request.Query["favoritos"].ToString();
         
         var query = q?.ToLower();
         
@@ -35,13 +36,45 @@ public class ListModel(utadPlayAbleContext context) : PageModel
             .ToListAsync();
         
         
-        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        // Add default categories if they don't exist
+        var defaultCategories = new[] 
+        {
+            "Matemática", 
+            "Letras", 
+            "Ciência",
+            "Geografia", 
+            "Colorir", 
+            "Música",
+            "Memória",
+            "Puzzle",
+        };
+
+        categories.AddRange(defaultCategories.Except(categories));
+        categories.Sort();
         
+        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
         
         ViewData["cgeneros"] = categories;
         
         IQueryable<Game> gamesQuery = context.Games;
+        
+        // Verifica se o utilizador está autenticado
+        if (!string.IsNullOrEmpty((favoritos)))
+        {
+            if (favoritos == "true")
+            {
+                if (!string.IsNullOrEmpty(userId) && User.Identity?.IsAuthenticated == true)
+                {
+                    var favoriteGames = await context.UserFavoriteGames
+                        .Where(f => f.UserId == userId)
+                        .Select(f => f.GameId)
+                        .ToListAsync();
 
+                    gamesQuery = gamesQuery.Where(g => favoriteGames.Contains(g.Id));
+                }
+            }
+        }
+        
         if (!string.IsNullOrEmpty(query))
         {
             gamesQuery = gamesQuery.Where(g => g.Name.ToLower().Contains(query) || g.Description.ToLower().Contains(query));

@@ -40,13 +40,13 @@
     <div class="shortcut-bar">
         <a asp-page="/Home/Help">
             <span class="shortcut-icon">
-                <img src=" /assets/iconesipc/question-mark-svgrepo-com.svg" alt="ajuda" />
+                <img src="/assets/iconesipc/question-mark-svgrepo-com.svg" alt="ajuda" />
             </span>
             Ajuda</a>
         <p class="divisao">|</p>
         <ul>
             <li>
-                <a href="/list?cat=matematica">
+                <a href="/list?generos=Matemática">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/blackboard-svgrepo-com.svg" alt="matemática"  />
                     </span>
@@ -54,7 +54,7 @@
                 </a>
             </li>
             <li>
-                <a href="/list?cat=letras">
+                <a href="/list?generos=Letras">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/cubes-abc-svgrepo-com(1).svg" alt="letras"  />
                     </span>
@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li>
-                <a href="/list?cat=ciencia">
+                <a href="/list?generos=Ciência">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/science-svgrepo-com.svg" alt="ciência"  />
                     </span>
@@ -70,7 +70,7 @@
                 </a>
             </li>
             <li>
-                <a href="/list?cat=globo">
+                <a href="/list?generos=Geografia">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/geography-svgrepo-com.svg" alt="geografia"  />
                     </span>
@@ -78,7 +78,7 @@
                 </a>
             </li>
             <li>
-                <a href="/list?cat=colorir">
+                <a href="/list?generos=Colorir">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/painting-art-svgrepo-com.svg" alt="colorir" />
                     </span>
@@ -86,7 +86,7 @@
                 </a>
             </li>
             <li>
-                <a href="/list?cat=musica">
+                <a href="/list?generos=Música">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/musical-notes-svgrepo-com(1).svg" alt="música"  />
                     </span>
@@ -94,7 +94,7 @@
                 </a>
             </li>
             <li>
-                <a href="/list?cat=memoria">
+                <a href="/list?generos=Memória">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/brain-13-svgrepo-com.svg" alt="memória"  />
                     </span>
@@ -102,7 +102,7 @@
                 </a>
             </li>
             <li>
-                <a href="/list?cat=puzzle">
+                <a href="/list?generos=Puzzle">
                     <span class="shortcut-icon">
                         <img src="~/assets/iconesipc/puzzle-9-svgrepo-com.svg" alt="puzzle"  />
 
@@ -112,11 +112,12 @@
             </li>
         </ul>
         <p class="divisao">|</p>
-        <a asp-page=" ">
+        <a href="/list?favoritos=true">
             <span class="shortcut-icon">
                 <img src="~/assets/iconesipc/star-svgrepo-com(1).svg" alt="favoritos"  />
             </span>
-            Favoritos</a>
+            Favoritos
+        </a>
     </div>
 
     <div class="container">
@@ -133,6 +134,7 @@
             <div class="footer-links">
             <a asp-page="/Home/About">Sobre Nós</a>
             <a asp-page="/Home/Help">Ajuda</a>
+            <a href="https://github.com/utad-playAble/playAble/">Código Fonte</a>
             </div>
             <img src="/assets/bixinhos.svg" alt="mascotes da playAble" style="width: 100%; max-width: 240px; margin: 0.5em 2em 1em 2em;">
     </footer>
