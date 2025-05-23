@@ -1,0 +1,344 @@
+@font-face {
+	font-family: "Buenos Aires";
+	src: url("files/BUENOSAI.TTF");
+}
+@font-face {
+	font-family: "Cassius";
+	src: url("files/CASSIUS.TTF");
+}
+
+body {
+	background-color: #4f3404;
+	font-family: "Buenos Aires";
+	cursor: url("img/cursor_arrow.png"), default;
+	font-size: 20pt
+}
+h1 {
+	font-family: "Buenos Aires";
+	font-size: 2em;
+	text-align: center;
+	color: #332513;
+	text-shadow:
+		-1px -1px 0 #e4cd9d,  
+		 1px -1px 0 #e4cd9d,
+		-1px 1px 0 #e4cd9d,
+		1px 1px 0 #e4cd9d;
+	margin: 10px 0;
+}
+textarea { width: 100%; min-height: 40px; }
+a:hover { cursor: url("img/cursor_pointer.png"), pointer; }
+.button {
+	background-image: url("img/menuButton.png");
+	background-position: center;
+	list-style: none;
+	width: 235px;
+	height: 55px;
+	padding-top: 10px;
+	margin: auto;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-family: "Buenos Aires";
+	color: #332513;
+	text-shadow:
+		-1px -1px 0 #e4cd9d,  
+		 1px -1px 0 #e4cd9d,
+		-1px 1px 0 #e4cd9d,
+		1px 1px 0 #e4cd9d;
+}
+.inlineButton {
+	background-image: url("img/menuButton2.png");
+	background-position: center;
+	list-style: none;
+	width: 235px;
+	height: 52px;
+	padding-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	font-family: "Buenos Aires";
+	color: #332513;
+	text-shadow:
+		-1px -1px 0 #e4cd9d,  
+		 1px -1px 0 #e4cd9d,
+		-1px 1px 0 #e4cd9d,
+		1px 1px 0 #e4cd9d;
+}
+.centered {
+	text-align: center;
+	margin: auto;
+}
+#modular {
+	box-shadow: 6px 6px 12px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+	background-color: #c49543;
+	padding: 20px;
+	text-align: center;
+	border: 4px solid #926d14;
+}
+
+#menu {
+	background-image: url("img/bg_menu.jpg");
+	width: 664px;
+	height: 663px;
+	margin: auto;
+	text-align: center;
+	padding: 35px;
+	overflow: hidden;
+}
+	#menu h1 {
+		font-size: 4em;
+		text-indent: -9999px;
+		overflow: hidden;
+		background-image: url("img/title.png");
+		background-repeat: no-repeat;
+		width: 507px;
+		height: 244px;
+		margin: auto;
+	}
+#menu ul { width: 235px;
+		margin: auto; }
+	#menu li {
+		background-image: url("img/menuButton.png");
+		background-position: center;
+		list-style: none;
+		width: 235px;
+		height: 60px;
+		padding-top: 5px;
+		margin-bottom: 10px;
+	}
+		#menu li a {
+			width: 100%;
+			height: 100%;
+			display: block;
+			color: #332513;
+			text-decoration: none;
+			text-shadow:
+				-1px -1px 0 #e4cd9d,  
+   			 	1px -1px 0 #e4cd9d,
+    			-1px 1px 0 #e4cd9d,
+     			1px 1px 0 #e4cd9d;
+		}
+		#menu li:hover {
+			width: 400px;
+			margin-left: -83px;
+		}
+		#menu li a:hover {
+ 			color: #495b1b;
+		}
+
+#main {
+	width: 664px;
+	height: 663px;
+	margin: auto;
+	text-align: center;
+	background-image: url("img/bgFrame.jpg");
+	padding: 35px;
+}
+.controls_top, .controls_bottom {
+	height: 60px;
+	width: 465px;
+	margin: auto;
+	margin-top: 30px;
+}
+	.controls_top a, .controls_bottom a { height: 100%; display: block; float: left; }
+	#main .controls_bottom a { float: none; }
+	#backToMenu, #backToMenu_create { display: block; width: 80px; background-image: url("img/icon_home.png"); margin-right: 10px; text-indent: -999px; overflow: hidden; }
+	.controls_top #levelSelectDisplay { 
+		width: 280px;
+		height: 50px;
+		background-image: url("img/button_level.png");
+		margin-right: 10px;
+		color: #fff;
+		text-decoration: none;
+		vertical-align: middle;
+		padding-top: 10px;
+	}
+	.settingsButton { width: 80px; background-image: url("img/icon_settings.png"); text-indent: -999px; overflow: hidden; }
+#gameboard, #gameboard_create {
+	background-image: url("img/bg.jpg");
+	border: 1px solid #000000;
+	margin: auto;
+}
+	#gameboard td, #gameboard_create td {
+		height: 80px;
+		width: 80px;
+		vertical-align: middle;
+		text-align: center;
+	}
+		#gameboard td a, #gameboard_create td a { 
+			display: block;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			text-indent: -999px;
+		}
+		#gameboard td a:hover, #gameboard_create td a:hover { cursor: url("img/cursor_pointer.png"), pointer; }
+
+.on1 {
+	background-image: url("img/button1_on.png");
+	background-repeat: no-repeat;
+}
+.off1 {
+	background-image: url("img/button1_off.png");
+	background-repeat: no-repeat;	
+}
+	.on2 {
+	background-image: url("img/button2_on.png");
+	background-repeat: no-repeat;
+	}
+	.off2 {
+		background-image: url("img/button2_off.png");
+		background-repeat: no-repeat;	
+	}
+	.on3 {
+		background-image: url("img/button3_on.png");
+		background-repeat: no-repeat;
+	}
+	.off3 {
+		background-image: url("img/button3_off.png");
+		background-repeat: no-repeat;	
+	}
+	#resetButton { 
+		display: block;
+		height: 50px;
+		width: 282px;
+		margin: auto;
+		padding-top: 10px;
+		color: #ffffff;
+		text-decoration: none;
+		background-image: url("img/button_reset.png");
+		background-position: center;
+	}
+
+#createPage {
+	background-image: url("img/bg_create.jpg");
+	width: 664px;
+	height: 663px;
+	margin: auto;
+	text-align: center;
+	padding: 35px;
+	overflow: hidden;
+	color: #ffffff;
+	line-height: 1.2em;
+}
+	#createPage a {
+		color: #ffffff;
+		text-decoration: none;
+		margin-right: 10px;
+	}
+	#getCode {
+		background-image: url("img/button_getCode.png");
+		width: 184px;
+		height: 50px;
+		padding-top: 10px;
+		margin-left: 45px;
+	}
+	#createPage .settingsButton { float: right; }
+	#resetButton_create { 
+		background-image: url("img/button_resetCreate.png");
+		width: 184px;
+		height: 50px;
+		padding-top: 10px;
+	}
+	#gameMode {
+		background-image: url("img/button_gameMode.png");
+		width: 184px;
+		height: 50px;
+		padding-top: 10px;		
+	}
+	#createPage #resetButton_create { float: right; }
+
+#aboutPage {
+	background-image: url("img/bg_about.jpg");
+	width: 664px;
+	height: 663px;
+	margin: auto;
+	text-align: center;
+	padding: 35px;
+	overflow: hidden;
+	color: #ffffff;
+	font-family: "Cassius";
+	line-height: 1.2em;
+}
+	#aboutPage a {
+		color: #332513;
+		font-weight: bold;
+		text-shadow:
+			-1px -1px 0 #e4cd9d,  
+			 1px -1px 0 #e4cd9d,
+			-1px 1px 0 #e4cd9d,
+ 			1px 1px 0 #e4cd9d;
+ 		}
+ 	#aboutPage li { list-style-type: none; }
+
+ #settingsPage {
+	background-image: url("img/bg_settings.jpg");
+	width: 638px;
+	height: 632px;
+	margin: auto;
+	text-align: left;
+	padding: 50px;
+	overflow: hidden;
+	color: #332513;
+	font-size: 1.2em;
+}
+	#settingsPage li { font-size: 1.4em; list-style-type: none; }
+	#settingsPage label { vertical-align: middle; }
+	#settingsPage .inlineButton { margin-top: 16px; }
+
+	 /* The switch - the box around the slider */
+	.switch {
+	  position: relative;
+	  display: inline-block;
+	  width: 107px;
+	  height: 63px;
+	}
+
+	/* Hide default HTML checkbox */
+	.switch input {
+	  opacity: 0;
+	  width: 0;
+	  height: 0;
+	}
+
+	/* The slider */
+	.slider {
+	  position: absolute;
+	  cursor: pointer;
+	  background-image: url("img/bg_slider.png");
+	  width: 107px;
+	  height: 63px;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+
+	.slider:before {
+	  position: absolute;
+	  background-image: url("img/sliderButton.png");
+	  content: "";
+	  height: 32px;
+	  width: 32px;
+	  left: 14px;
+	  bottom: 16px;
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	  border-radius: 50%;
+	}
+
+	input:checked + .slider:before {
+	  -webkit-transform: translateX(46px);
+	  -ms-transform: translateX(46px);
+	  transform: translateX(46px);
+	}
+	input:checked + .slider {
+		background-image: url("img/bg_slider_on.png");
+	}

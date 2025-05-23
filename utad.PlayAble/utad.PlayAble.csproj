@@ -26,9 +26,4 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\assets\g\tetris.png" />
-    <_ContentIncludedByDefault Remove="Pages\e\_tetris.cshtml" />
-  </ItemGroup>
-
 </Project>
