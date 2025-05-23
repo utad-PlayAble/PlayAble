@@ -20,7 +20,9 @@ dotnet ef database update
 
 É possível que as ferramentas que fornecem este comando não estejam instaladas no seu computador, originando um erro; neste caso, é necessário instalá-las usando o comando `dotnet tool install --global dotnet-ef` e, uma vez instaladas, executar novamente comando supracitado.
 
-Após este passo, a plataforma está pronta a ser executada e usada, não sendo necessária configuração adicional.
+Após este passo, a plataforma está pronta a ser executada e usada, não sendo necessária configuração adicional. 
+
+Para deployment fora de um ambiente de desenvolvimento, poderá ainda ser necessário alterar a connection string da base de dados, que se encontra no ficheiro ``utad.PlayAble/appsettings.json``.
 
 ## Adicionar jogos
 
