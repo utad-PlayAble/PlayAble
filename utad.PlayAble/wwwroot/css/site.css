@@ -1243,3 +1243,37 @@ footer {
         padding: 1.2rem 0.5rem;
     }
 }
+
+.titefav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.titefav h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+
+
+.titefavright {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    gap: 1.2rem; /* Espaço entre o <p> e o botão */
+    justify-content: flex-end; /* Alinha à esquerda, ajuste se quiser centralizar */
+}
+
+.titefavright p {
+    margin: 0; /* Remove margens padrão */
+    font-size: 1.1rem; /* Ajuste conforme necessário */
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
