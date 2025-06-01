@@ -8,8 +8,20 @@
 <body>
     <div class="container">
         <main>
-            <div>
+            <div class="titefav">
                 <h1 class="titulo">@Model.Game.Name</h1>
+                <div class="titefavright">
+                    <p> Guarda este jogo para jogares mais tarde!</p>
+                    <form method="post" asp-page-handler="ToggleFavorite">
+                        <input type="hidden" name="gameId" value="@Model.Game.Id" />
+                        <button id="favorite-button" title="Favoritar" style="background: none; border: none; cursor: pointer;">
+                            <img id="favorite-icon"
+                                 src="@(ViewData["IsFavorite"] != null && (bool)ViewData["IsFavorite"] ? "/assets/star-filled.svg" : "/assets/star-empty.svg")"
+                                 alt="Favoritar"
+                                 style="width: 24px; height: 24px;" />
+                        </button>
+                    </form>
+                </div>
             </div>
 
             <div class="recazul jogo-principal">
@@ -36,16 +48,7 @@
             
             <section class="game-instructions">
                 <h2 class="titulo">SOBRE ESTE JOGO</h2>
-                
-                <form method="post" asp-page-handler="ToggleFavorite">
-                    <input type="hidden" name="gameId" value="@Model.Game.Id" />
-                    <button id="favorite-button" title="Favoritar" style="background: none; border: none; cursor: pointer;">
-                        <img id="favorite-icon" 
-                             src="@(ViewData["IsFavorite"] != null && (bool)ViewData["IsFavorite"] ? "/assets/star-filled.svg" : "/assets/star-empty.svg")" 
-                             alt="Favoritar" 
-                             style="width: 24px; height: 24px;" />
-                    </button>
-                </form>
+               
                 
                 <p>@Model.Game.Description</p>
                 <p>@Model.Game.Credits</p>
