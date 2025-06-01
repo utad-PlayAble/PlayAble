@@ -361,4 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd!/utad.PlayAble/.env
-!/utad.PlayAble/.env
+/utad.PlayAble/.env
+/utad.PlayAble/appsettings.json
