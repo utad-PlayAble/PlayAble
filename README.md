@@ -22,7 +22,7 @@ dotnet ef database update
 
 Após este passo, a plataforma está pronta a ser executada e usada, não sendo necessária configuração adicional. 
 
-Para deployment fora de um ambiente de desenvolvimento, poderá ainda ser necessário alterar a connection string da base de dados, que se encontra no ficheiro ``utad.PlayAble/appsettings.json``.
+É ainda necessário criar o ficheiro ``utad.PlayAble/appsettings.json``, configurando nele a connection string para a base de dados, bem como os detalhes de login para o email a ser usado pela plataforma.
 
 ## Adicionar jogos
 
