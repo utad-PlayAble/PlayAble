@@ -5,7 +5,7 @@
 }
 
 
-<main class="main-content">
+<div class="main-content">
     <h1 class="titulo" style="text-align: center;">BEM-VINDE AO PLAYABLE!</h1>
     <div class="recazul">
         <div class="coluna">
@@ -22,7 +22,7 @@
     {
         <div class="gametitle" style="display: flex; justify-content: space-between; align-items: center;">
             <h2 class="titulo">@category</h2>
-            <a href="/list?generos=@category"> Mais Jogos desta Categoria</a>
+            <a href="/list?generos=@category"> Mais jogos desta categoria: @category</a>
         </div>
 
         <div class="game-categories">
@@ -41,7 +41,7 @@
             }
         </div>
     }
-    </main>
+    </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
