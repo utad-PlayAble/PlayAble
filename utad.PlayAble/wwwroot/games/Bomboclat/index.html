@@ -1,69 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOMBOCLAT</title>
-    <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BOMBOCLAT</title>
+        <link rel="stylesheet" href="style.css">
+        
 
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/OBJLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/MTLLoader.js"></script>
-    
-    <script src = "main.js" type="module"></script>
-</head>
-<body>
-    <img id="background" src="backgrounds/8-bit-graphics-pixels-scene-with-forest.jpg" alt="Background Image" style="width: 100%; height: 100%; position: absolute; z-index: -1;">
-    <!-- Menu Principal -->
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js",
+                "three/objloader": "https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/loaders/OBJLoader.js",
+                "three/mtlloader": "https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/loaders/MTLLoader.js"
+              }
+            }
+        </script>
+        
+    </head>
+    <body>
+        <img id="background" src="backgrounds/8-bit-graphics-pixels-scene-with-forest.jpg" alt="Background Image" style="width: 100%; height: 100%; position: absolute; z-index: -1;">
+        <!-- Menu Principal -->
 
 
-<div id="menuContainer">
+        <div id="menuContainer">
 
-         <div id="logoWrapper">
-        <img id="logo" src="assets/images/logo.svg" alt="Logo"/>    
-    </div>
-    <div style="height: 100px;"></div>
-    <div id="buttonGroup">
-        <button class="menuButton" id="playButton">JOGAR</button>
-        <button class="menuButton" id="optionsButton">OPÇÕES</button>
-        <button class="menuButton" id="creditsButton">CRÉDITOS</button>
-    <div class="menuButton">
-    <h3>Select Map:</h3>
-    <select id="mapSelect">
-        <option value="classic">Classic</option>
-        <option value="maze">Maze</option>
-        <option value="arena">Arena</option>
-    </select>
-</div>    </div>
-</div>
+            <div id="logoWrapper">
+                <img id="logo" src="assets/images/logo.svg" alt="Logo"/>
+            </div>
 
-<!-- Tela de Créditos -->
-<div id="creditsContainer">
-    <div id="creditsContent">
-        <h2 id="creditsTitle">CRÉDITOS</h2>
-        <div id="creditsText">
-            <p>DAVID SANTOS AL78851</p>
-            <p>DIOGO PINTO AL78734</p>
-            <p>FILIPA MONTEIRO AL78231</p>
-            <p>JOÃO ESTEVES AL78211</p>
-            <p>Este jogo foi desenvolvido no âmbito da UC Computação Gráfica.</p>
+            <div style="height: 100px;"></div>
+
+            <div id="buttonGroup">
+                <button class="menuButton" id="playButton">JOGAR</button>
+                <button class="menuButton" id="instructionsButton">INSTRUÇÕES</button>
+                <button class="menuButton" id="creditsButton">CRÉDITOS</button>
+                <button class="menuButton" id="mapsButton">MAPAS</button>
+
+            </div>
+
         </div>
-        <button id="backButton">VOLTAR</button>
-    </div>
-</div>
 
-<!-- Conteúdo do Jogo -->
-<div id="gameContainer">
-    <div id="info">
-        <img src="assets/images/wasd.svg" height="50px" style="margin-top: 15px;" alt="W-A-S-D"/>
-        <br>
-        'C' muda a câmera
-        <br>
-        ESPAÇO coloca bomba
-    </div>
-    <div id="topViewContainer"></div>
-    <div id="secondaryViewContainer" style="position: absolute; top: 20px; right: 20px; width: 200px; height: 200px; border: 2px solid white;"></div>
-</div>
+        <!-- Créditos -->
+        <div id="creditsContainer">
+            <div id="creditsContent">
+                <h2 id="creditsTitle">CRÉDITOS</h2>
+                <div id="creditsText">
+                    <p>Desenvolvedores:</p>
+                    <ul>
+                        <li>David Santos</li>
+                        <li>Diogo Pinto</li>
+                        <li>Filipa Monteiro</li>
+                        <li>João Esteves</li>
+                    </ul>
+                    <p>Orientado por:</p>
+                    <p>
+                        Unidade Curricular de Computação Gráfica – 2024/2025
+                        Licenciatura em Engenharia Informática – UTAD
+                    </p>
+                    <p>Este projecto teve como objectivo a aplicação prática dos principais conceitos de computação gráfica: modelação 3D, texturização, iluminação, câmaras, interacção e animação, tudo desenvolvido com a biblioteca Three.js.</p>
+                </div>
+                <button id="backButton">VOLTAR</button>
+            </div>
+        </div>
 
-</body>
+        <!-- Instruções -->
+        <div id="instructionsContainer">
+            <div id="instructionsContent">
+                <h2 id="instructionsTitle">Instruções</h2>
+                <div id="instructionsText">
+                    <p>Bem-vindo ao Bomboclat, um remake 3D do clássico Bomberman, desenvolvido no âmbito da unidade curricular de Computação Gráfica.</p>
+                    <p>Controlos do Jogo:</p>
+                    <ul>
+                        <li>W: Mover para cima</li>
+                        <li>A: Mover para a esquerda</li>
+                        <li>S: Mover para baixo</li>
+                        <li>D: Mover para a direita</li>
+                        <li>Espaço: Colocar bomba</li>
+                        <li>C: Alternar entre vistas (perspetiva / ortográfica)</li>
+                        <li>V: Ativar câmara livre (movimento com rato e teclas direcionais)</li>
+                        <li>L: Menu de Iluminação</li>
+                    </ul>
+                    <p>Elimina todos os inimigos, evita as explosões e apanha as moedas escondidas. Cuidado com os obstáculos!</p>
+                </div>
+                <button id="instructionsBackButton">VOLTAR</button>
+            </div>
+        </div>
+
+        <!-- Mapas -->
+        <div id="mapsContainer">
+            <div id="mapsContent">
+                <h2 id="mapsTitle">Mapas</h2>
+                
+                <div id="mapsText">
+                    <p>Cada labirinto oferece um desafio único: caminhos apertados, armadilhas escondidas e inimigos em patrulha. Escolhe com sabedoria, a estratégia muda consoante o terreno!</p>
+                    <div class="map-options">
+                        <button class="mapOption" data-value="classic">CLASSIC</button>
+                        <button class="mapOption" data-value="maze">MAZE</button>
+                        <button class="mapOption" data-value="arena">ARENA</button>
+                    </div>
+                </div>
+                <button id="mapsPlayButton">JOGAR</button>
+                <button id="mapsBackButton">VOLTAR</button>
+            </div>
+        </div>
+
+
+
+        <!-- Jogo -->
+        <div id="gameContainer">
+            <div id="info">
+                <img src="assets/images/wasd.svg" height="50px" style="margin-top: 15px;" alt="W-A-S-D"/>
+                <br>
+                'C' muda a câmera
+                <br>
+                ESPAÇO coloca bomba
+            </div>
+            <div id="topViewContainer"></div>
+            <div id="secondaryViewContainer"></div>
+        </div>
+
+    </body>
+    <script src = "main.js" type="module" ></script>
 </html>
